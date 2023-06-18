@@ -1,0 +1,44 @@
+<section id="header">
+    <div class="main-bar">
+        <div class="logo">
+            <p>Revive.</p>
+        </div>
+        <!-- <div class="search">
+        <input type="search" placeholder="Search products" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div> -->
+        <div class="reg-bar">
+            <div class="register">
+                <p>
+                    <a routerLink="/signup" id="signupLink">Sign In&nbsp; | &nbsp;</a>
+                    <a routerLink="/login" id="loginLink">Login</a>
+                </p>
+            </div>
+            <div class="cart">
+                <a class="wishlist-link" routerLink="/wishlist"><i class="fa-sharp fa-solid fa-heart"></i></a>
+                <a class="cart-link" routerLink="/cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="nav-bar">
+        <div class="nav">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+            <a class="nav-link" routerLink="/skincare" routerLinkActive="active">Skin Care</a>
+            <a class="nav-link" routerLink="/cosmetics" routerLinkActive="active">Cosmetics</a>
+            <a class="nav-link" routerLink="/haircare" routerLinkActive="active">Hair Care</a>
+            <a class="nav-link" routerLink="/bathnbody" routerLinkActive="active">Bath & Body</a>
+            <a class="nav-link" routerLink="/fragrance" routerLinkActive="active">Fragrance</a>
+            <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+            <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+            <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+
+
+            <!-- <a class="nav-link" *ngIf="authenticationService.isAuthenticated()" routerLink="/admin" id="adminLink"
+                routerLinkActive="active">Admin</a> -->
+        </div>
+    </div>
+
+</section>
