@@ -1,0 +1,19 @@
+<div class="product-item">
+    <div class="img-div">
+        <img [attr.src]="productElement.image" class="prod-img" alt="" />
+        <div class="overlay">
+            <p> <a (click)="quickView(productElement.productId)" id="quickviewLink">quick view</a> |
+                <a><i class="fa-solid fa-cart-plus"  (click)="onAddToCart(productElement.productId, productElement.price)"></i></a>
+
+                <!-- <span style="position: absolute;" id="notFavourite" *ngIf="!isFavourite"><i class="heart fa fa-heart"
+                        (click)="onAddRemoveWishlist(productElement.productId)"></i></span>
+                <span style="position: absolute;" id="favourite" *ngIf="isFavourite"> -->
+                    <i class="heart fa fa-heart" ></i>
+                <!-- </span> -->
+            </p>
+        </div>
+    </div>
+    <p>{{ productElement.productName }} </p>
+    <p>{{ productElement.brand}}</p>
+    <p>{{ productElement.price | currency : "Rs." }}</p>
+</div>

@@ -10,8 +10,12 @@
         <div class="reg-bar">
             <div class="register">
                 <p>
-                    <a routerLink="/signup" id="signupLink">Sign In&nbsp; | &nbsp;</a>
-                    <a routerLink="/login" id="loginLink">Login</a>
+                    <a routerLink="/signup" id="signupLink" *ngIf="!authenticationService.loggedIn()">Sign In&nbsp; |
+                        &nbsp;</a>
+                    <a routerLink="/login" id="loginLink" *ngIf="!authenticationService.loggedIn()">Login</a>
+                    <a routerLink="/home" id="loginLink" *ngIf="authenticationService.loggedIn()"
+                        (click)="onLogout()">Logout</a>
+
                 </p>
             </div>
             <div class="cart">
@@ -23,22 +27,29 @@
         </div>
 
     </div>
-    <div class="nav-bar">
-        <div class="nav">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-            <a class="nav-link" routerLink="/skincare" routerLinkActive="active">Skin Care</a>
-            <a class="nav-link" routerLink="/cosmetics" routerLinkActive="active">Cosmetics</a>
-            <a class="nav-link" routerLink="/haircare" routerLinkActive="active">Hair Care</a>
-            <a class="nav-link" routerLink="/bathnbody" routerLinkActive="active">Bath & Body</a>
-            <a class="nav-link" routerLink="/fragrance" routerLinkActive="active">Fragrance</a>
-            <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-            <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
-            <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+    <div id="header2">
+        <div class="nav-bar">
+            <div class="nav">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+                <a class="nav-link" routerLink="/productCategory/skincare" routerLinkActive="active">Skin Care</a>
+                <a class="nav-link" routerLink="/productCategory/cosmetics" routerLinkActive="active">Cosmetics</a>
+                <a class="nav-link" routerLink="/productCategory/haircare" routerLinkActive="active">Hair Care</a>
+                <a class="nav-link" routerLink="/productCategory/bathnbody" routerLinkActive="active">Bath & Body</a>
+                <a class="nav-link" routerLink="/productCategory/fragrance" routerLinkActive="active">Fragrance</a>
+                <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+                <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+                <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
 
 
-            <!-- <a class="nav-link" *ngIf="authenticationService.isAuthenticated()" routerLink="/admin" id="adminLink"
-                routerLinkActive="active">Admin</a> -->
+
+            </div>
+
+        </div>
+        <div class="admin">
+            <a class="nav-link" *ngIf="authenticationService.isAuthenticated()" routerLink="/admin" id="adminLink"
+                routerLinkActive="active">Admin</a>
         </div>
     </div>
+
 
 </section>

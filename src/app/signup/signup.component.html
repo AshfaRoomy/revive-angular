@@ -1,0 +1,68 @@
+<!-- <div class="container-fluid main-div" [ngStyle]="{ background: 'url(assets/images/reg.png)' }">
+    <div class="row">
+        <div class="col-md-6 image-col">
+            <img [src]="Image" />
+        </div> -->
+
+<!-- <div class="col-md-6 reg-form"> -->
+<div id="main-div" [ngStyle]="{ background: 'url(assets/images/reg.png)' }">
+    <div class="reg-container">
+        <div class="form-box signup">
+            <div class="login-head">
+                <h3 class="active">
+                    <a routerLink="/signup" id="signupLink">Sign&nbsp;up</a>
+                </h3>
+                <h3><a routerLink="/login" id="loginLink"> Login</a></h3>
+            </div>
+            <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="name" class="username" formControlName="username" />
+                    <label for="username">User Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" class="email" formControlName="email" />
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" class="password" formControlName="password" />
+                    <label for="password">Password</label>
+                </div>
+                <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button class="btn btn-default" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+                <p class="link">
+                    Already have an account? <a routerLink="/login" id="loginLink">Login</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="response">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="email" formControlName="email" />
+                    </div>
+                    <div class="response">
+                        <label for="password">Password:</label>
+                        <input type="password" class="password" formControlName="password" />
+                    </div>
+                    <a href="#">Forgot Password?</a>
+                    <div class="row" id="button-row">
+                        <button class="btn btn-default" type="submit" [disabled]="!loginForm.valid">Sign
+                            Up</button><br />
+                        <p>
+                            Already have an account?<a routerLink="/signup" id="signupLink">Sign Up</a>
+                        </p>
+                    </div>
+                </form> -->
+
+<!-- </div>
+</div>
+</div> -->

@@ -1,0 +1,75 @@
+.modal-content {
+    width: 560px;
+}
+
+.modal-header {
+    width: 100%;
+    margin: 0;
+    background-color: #354048;
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-header h1 {
+    font-family: "DM Sans", serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.modal-header .close-btn {
+    display: flex;
+    align-content: flex-end;
+}
+
+.modal-header button {
+    color: #fff;
+}
+
+.modal-body {
+    background-color: #EDECEA;
+}
+
+.modal-body form {
+    margin-top: 20px;
+}
+
+.modal-body .form-group {
+    font-family: "DM Sans", serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 25px;
+}
+
+.modal-body .form-group label {
+    width: 120px;
+}
+
+.modal-body .form-group input {
+    width: 280px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    color: #000;
+}
+
+.modal-body .form-group select {
+    width: 400px;
+    border-radius: 5px;
+}
+
+.modal-footer button {
+    font-family: "DM Sans", serif;
+    color: #fff;
+    background-color: #354048;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+}

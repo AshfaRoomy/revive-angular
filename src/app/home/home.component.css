@@ -1,3 +1,5 @@
+/* ============================== Home ====================================== */
+
 #home {
     width: 100%;
     height: 100vh;
@@ -7,51 +9,89 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 100px;
+    padding-left: 150px;
 
 }
 
-#home h2 {
+#home h3 {
     margin: 0;
     font-family: "Syne", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 36px;
     line-height: 42px;
 
 }
 
-#home h3 {
-    font-family: 'Lora', serif;
-    padding-left: 40px;
-    font-size: 42px;
-    line-height: 50px;
+#home h2 {
+    font-family: 'Syne', serif;
+    text-transform: uppercase;
+    font-size: 62px;
+    line-height: 68px;
 }
 
 #home h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 72px;
-    padding-left: 80px;
+    color: #a7927b;
+    font-family: 'Tangerine', cursive;
+    font-size: 86px;
 }
 
 #home button {
     color: #67807A;
+    background-color: #EDECEA;
     border: 2px solid #67807A;
     font-size: 15px;
     font-weight: 700;
     padding: 8px 24px;
+    margin-top: 70px;
     border-radius: 18px;
 }
 
 #home button:hover {
     color: #fff;
     background-color: #67807A;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 
 .btn-default:focus {
     outline: none;
 }
+
+/* ============================== Features ====================================== */
+
+#features {
+    width: 100%;
+    padding: 50px;
+}
+
+#features .card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#features .card {
+    padding: 30px;
+    text-align: center;
+}
+
+#features .card .feat-img {
+    height: 135px;
+    width: 135px;
+    border: 4px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#features .card p {
+    font-family: 'DM Sans', serif;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* ============================== Categories ====================================== */
 
 #categories {
     display: flex;
@@ -75,7 +115,7 @@
 #categories .category-card {
     width: 180px;
     height: 180px;
-    background-color: rgb(0, 0, 0, 0.25);
+    background-color: rgb(0, 0, 0, 0.5);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -85,4 +125,70 @@
     font-weight: 600;
     letter-spacing: 0.25em;
     text-align: center;
+}
+
+/* ============================== Banner ====================================== */
+
+#banner {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 150px;
+}
+
+#banner .banner-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#banner .banner-content {
+    display: flex;
+}
+
+#banner .banner-content .supscript h1 {
+    font-size: 188px;
+    font-family: 'Junge', serif;
+    color: #40645c;
+}
+
+#banner .banner-content .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#banner .banner-content .content h3 {
+    font-family: 'Syne', serif;
+    font-size: 32px;
+    line-height: 38px;
+    padding: 3px;
+    margin: 0;
+}
+
+#banner .banner-content .content .rev {
+    font-family: 'Junge';
+    font-weight: 600;
+    font-size: 48px;
+    letter-spacing: 0.2em;
+    color: #40645c;
+}
+
+#banner button {
+    color: #67807A;
+    background-color: #CCBAA5;
+    border: 2px solid #67807A;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 8px 24px;
+    margin-top: 70px;
+    border-radius: 18px;
+}
+
+#banner button:hover {
+    color: #fff;
+    background-color: #67807A;
 }

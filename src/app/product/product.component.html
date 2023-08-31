@@ -1,0 +1,25 @@
+<section id="product">
+    <div class="prod-card">
+        <div class="prod-img">
+            <img [src]="productItem.image" alt="">
+        </div>
+        <div class="prod-details">
+            <div class="prod-name">
+                <p>{{ productItem.productName }}</p>
+            </div>
+            <div class="prod-price">
+                <p>{{ productItem.price | currency : "Rs." }}</p>
+            </div>
+            <div class="prod-qty">
+                <p> Quantity: {{ productItem.quantity }}</p>
+            </div>
+        </div>
+        <div class="prod-icons">
+            <button class="btn btn-default" [routerLink]="[productItem.productId]" routerLinkActive="active">View
+                Product </button>
+            <button class="btn btn-default trash" (click)="onDelete(productItem.productId)"><i
+                    class="fa-solid fa-trash"></i></button>
+        </div>
+
+    </div>
+</section>

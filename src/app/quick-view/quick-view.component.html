@@ -1,0 +1,53 @@
+<section id="quick-view">
+    <div class="container-fluid container">
+      <div class="clsbtn">
+        <button type="button" id="close" class="close" data-dismiss="modal" (click)="onClose()">
+          <span>&times;</span>
+        </button>
+      </div>
+  
+      <div class="row"  *ngIf="product; else loadingTemplate">
+        <div class="col-md-5 image-container">
+          <img src={{product.image}} alt="" />
+        </div>
+  
+        <div class="col-md-7 contents">
+          <div class="prod-name">
+            <h1>{{ product.productName }} </h1>
+          </div>
+          <div class="prod-desc">
+            <p>{{product.description}}</p>
+          </div>
+          <div class="prod-price">
+            <p>{{ product.price | currency : "Rs." }}</p>
+          </div>
+         
+          <div class="prod-quantity">
+            <input class="form-control" id="quantityId" type="number" #selectedQuantity value="1" required min="1" >
+
+            <!-- <div class="qty-container">
+  
+              <div><button (click)="decrementQuantity()">-</button></div>
+              <div>
+                <td>{{qty}}</td>
+              </div>
+              <div><button (click)="incrementQuantity()">+</button></div>
+            </div> -->
+          </div>
+          <div class="buttons">
+            <!-- <button class="btn btn-default" (click)="onBack()">Back</button> -->
+            <button class="btn btn-default" (click)="onAddToCart()">Add to Cart</button>
+            <a routerLinkActive="active" class="cart-link" routerLink="/cart/cartProducts">
+              <button class="btn btn-default" *ngIf="authenticationService.loggedIn()">View Cart</button>
+            </a>
+  
+          </div>
+        </div>
+      </div>
+      <ng-template #loadingTemplate>
+        <!-- Handle loading state or display an appropriate message -->
+        <img [src]="loading" alt="">
+        <p>Please check your Internet connection</p>
+      </ng-template>
+    </div>
+  </section>

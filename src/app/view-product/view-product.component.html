@@ -1,0 +1,39 @@
+<section id="view-product">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 image-container">
+                <img [attr.src]="product.image" alt="" />
+            </div>
+
+            <div class="col-md-8 contents">
+                <div class="prod-name">
+                    <h1>{{ product.productName }} </h1>
+                </div>
+                <div class="prod-desc">
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="prod-price">
+                    <p>{{ product.price | currency : "Rs." }}</p>
+                </div>
+                <div class="prod-qty">
+                    <p>Available Quantity: {{ product.quantity }}</p>
+                </div>
+                <div class="row btn-row">
+                    <button class="btn btn-default" id="editProduct" data-toggle="modal"
+                        data-target="#editProductmodal"><i class="fa fa-edit"></i>&nbsp;Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <app-edit-product class="modal fade" id="editProductmodal" tabindex="-1" role="dialog"
+                    aria-labelledby="editProductmodal" aria-hidden="true"></app-edit-product>
+            </div>
+        </div>
+    </div>
+
+
+</section>

@@ -1,33 +1,87 @@
-<section id="home" [ngStyle]="{ background: 'url(assets/images/homepic.png)' }">
-    <h2>Unleash</h2>
-    <h3>Your skin's</h3>
+<section id="home" [ngStyle]="{ background: 'url(assets/images/home1.png)' }">
+    <h3>Unleash</h3>
+    <h2>Your skin's</h2>
     <h1>Radiance</h1>
     <button class="btn btn-default">Shop Now</button>
 </section>
+
+<section id="features">
+    <div class="card-container">
+        <div class="card">
+            <div class="feat-img">
+                <img [src]="feature1" />
+            </div>
+            <p>Free Shipping</p>
+        </div>
+        <div class="card">
+            <div class="feat-img">
+                <img [src]="feature2" />
+            </div>
+            <p>24/7 Support</p>
+        </div>
+        <div class="card">
+            <div class="feat-img">
+                <img [src]="feature3" />
+            </div>
+            <p>Offers & Promotions</p>
+        </div>
+        <div class="card">
+            <div class="feat-img">
+                <img [src]="feature4" />
+            </div>
+            <p>Save Money</p>
+        </div>
+        <div class="card">
+            <div class="feat-img">
+                <img [src]="feature5" />
+            </div>
+            <p>Happy Shopping</p>
+        </div>
+    </div>
+
+</section>
+
 <section id="categories">
-    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat1.jpg)' }">
+    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat1.png)' }">
         <div class="category-card">
             <h3>Glam Up</h3>
         </div>
     </div>
-    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat-2.jpg)' }">
+    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat2.png)' }">
         <div class="category-card">
             <h3>Healthy<br>Skin</h3>
         </div>
     </div>
-    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat1.jpg)' }">
+    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat3.png)' }">
         <div class="category-card">
             <h3>Voluminous<br>Hair</h3>
         </div>
     </div>
-    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat1.jpg)' }">
+    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat4.png)' }">
         <div class="category-card">
             <h3>Fragrance</h3>
         </div>
     </div>
-    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat1.jpg)' }">
+    <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat5.png)' }">
         <div class="category-card">
             <h3>Body<br>Lotions</h3>
         </div>
     </div>
+</section>
+
+<section id="banner" [ngStyle]="{ background: 'url(assets/images/banner1.png)' }">
+    <div class="banner-container">
+        <div class="banner-content">
+            <div class="supscript">
+                <h1>R</h1>
+            </div>
+            <div class="content">
+                <h3>ejuvenate</h3>
+                <h3>eplenish</h3>
+                <h3 class="rev">evive</h3>
+            </div>
+        </div>
+        <button class="btn btn-default">Shop Now</button>
+    </div>
+
 </section>

@@ -9,7 +9,7 @@
     background-color: #EDECEA;
     font-family: "Spartan";
     position: sticky;
-    /* box-shadow: 0 5px 15px rgba(49, 49, 49, 0.2); */
+    box-shadow: 0 5px 15px rgba(49, 49, 49, 0.2);
     z-index: 999;
     font-weight: 600;
     margin: 0;
@@ -58,6 +58,11 @@
     line-height: 18px;
 }
 
+#header .main-bar .register a:hover,
+#header .main-bar .cart i:hover {
+    color: #000;
+}
+
 #header .main-bar .cart {
     right: 30px;
     margin-right: 20px;
@@ -70,8 +75,14 @@
     margin-top: 18px;
 }
 
-#header .nav-bar {
+#header2 {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#header2 .nav-bar {
+    width: 80%;
     height: 50px;
     background-color: #EDECEA;
     display: flex;
@@ -80,7 +91,7 @@
     align-items: center;
 }
 
-#header .nav-bar .nav a {
+#header2 .nav-bar .nav a {
     color: #4c4c4c;
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
@@ -88,11 +99,33 @@
     position: relative;
 }
 
-#header .nav-bar .nav a:hover {
+#header2 .nav-bar .nav a:hover {
+    color: #000;
+    border-bottom: 2px solid #000;
+
+
+}
+
+.admin {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    align-items: center;
+}
+
+.admin a {
+    color: #4c4c4c;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    padding: 17px;
+    position: relative;
+}
+
+.admin a:hover {
     color: #000;
 }
 
-#header .nav-bar .nav a:hover::after {
+/* #header .nav-bar .nav a:hover::after {
     content: "";
     width: 55%;
     height: 2px;
@@ -100,4 +133,4 @@
     position: absolute;
     bottom: -4px;
     left: 12px;
-}
+} */

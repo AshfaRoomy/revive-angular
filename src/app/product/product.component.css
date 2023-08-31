@@ -1,0 +1,78 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap"); */
+
+
+#product {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #acacac;
+}
+
+#product .prod-card {
+    height: 200px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #EDECEA; */
+    margin: 3px 0px 3px 0px;
+    padding: 20px;
+    border-radius: 8px;
+
+}
+
+.prod-img img {
+    height: 180px;
+    width: 130px;
+    border-radius: 8px;
+}
+
+.prod-details {
+    width: 250px;
+}
+
+.prod-card p {
+    font-family: "DM Sans", serif;
+    font-weight: 600px;
+    color: #242424;
+    font-size: 15px;
+}
+
+.prod-card .prod-name {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.prod-card i {
+    font-size: 14px;
+}
+
+.prod-card button,
+a {
+    font-family: "DM Sans", serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #67807A;
+    margin: 5px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 4px 6px;
+}
+
+
+
+.prod-card button.trash i {
+    font-size: 12px;
+}
+
+
+.prod-card button:hover {
+    border: 1px solid #67807A;
+    background-color: transparent;
+
+}
+
+.btn-default:focus {
+    outline: none;
+}

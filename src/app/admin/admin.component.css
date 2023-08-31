@@ -1,0 +1,42 @@
+#container {
+    background-color: #EDECEA;
+    width: 100%;
+    /* position: fixed; */
+    /* z-index: 9; */
+    margin: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.view-prod {
+    padding: 0;
+}
+
+.btn-primary {
+    color: #354048;
+    /* background-color: #67807A; */
+    border: 1px solid #354048;
+    border-radius: 0;
+    background: none;
+    font-family: "DM Sans", serif;
+    font-weight: 600;
+    margin: 8px;
+}
+
+.btn-primary a {
+    color: #354048;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #354048;
+    color: #fff;
+}
+
+.btn-primary:focus {
+    outline: none;
+
+}
