@@ -1,0 +1,28 @@
+img {
+    width: 45%;
+}
+
+.card-body {
+    display: flex;
+    padding: 0;
+}
+
+.imgContainer {
+    width: 70%;
+    height: 100%;
+}
+
+.qtypricesize {
+    display: flex;
+    width: 25vw;
+    justify-content: space-around;
+}
+
+.container3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color: rgb(122, 32, 47);
+}

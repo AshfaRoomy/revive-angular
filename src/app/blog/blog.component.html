@@ -1,0 +1,25 @@
+<section id="blogs">
+    <div class="blog-card">
+        <div class="blog-img">
+            <img [src]="blogElement.image" alt="">
+        </div>
+        <div class="blog-details">
+            <div class="blog-name">
+                <p>{{ blogElement.blogTitle }}</p>
+            </div>
+            <div class="prod-content">
+                <p>{{ blogElement.blogContent }}</p>
+            </div>
+            <div class="prod-icons">
+                <button class="btn btn-default" [routerLink]="[blogElement.blogId]" routerLinkActive="active">View
+                    Blog </button>
+                <button class="btn btn-default trash" (click)="onDelete(blogElement.blogId)"><i
+                        class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+       
+       
+    </div>
+    
+
+</section>

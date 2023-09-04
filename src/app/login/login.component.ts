@@ -28,6 +28,7 @@ export class LoginComponent {
 
   ngOnInit() {
     this.initializeForm();
+
   }
 
   onLogin() {
@@ -41,6 +42,7 @@ export class LoginComponent {
     },
       err => {
         console.log(err)
+        this.router.navigate(["/login"]);
         this.toast.error("Login credentials invalid please try again")
       });
   }

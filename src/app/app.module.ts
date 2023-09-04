@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenStorage } from './services/TokenStorage.service';
 import { AuthenticationService } from './services/AuthenticationService.service';
 import { AuthInterceptor } from './helper/AuthInterceptorProviders';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy, DatePipe } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -37,6 +37,20 @@ import { CartService } from './services/CartService.service';
 import { CartProductsComponent } from './cart-products/cart-products.component';
 import { CartListComponent } from './cart-products/cart-list/cart-list.component';
 import { CartItemComponent } from './cart-products/cart-item/cart-item.component';
+import { PaymentFormComponent } from './payment-form/payment-form.component';
+import { UserService } from './services/UserService.service';
+import { OrderService } from './services/OrderServices.service';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AdminBlogsComponent } from './admin-blogs/admin-blogs.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { ViewBlogComponent } from './view-blog/view-blog.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { BlogsPageComponent } from './blogs-page/blogs-page.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { ViewOrdersComponent } from './view-orders/view-orders.component';
+import { CartOrdersItemComponent } from './cart-orders-item/cart-orders-item.component';
+import { CartOrdersListComponent } from './cart-orders-list/cart-orders-list.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +74,19 @@ import { CartItemComponent } from './cart-products/cart-item/cart-item.component
     CategoryProductsComponent,
     CartProductsComponent,
     CartListComponent,
-    CartItemComponent
+    CartItemComponent,
+    PaymentFormComponent,
+    AdminProductsComponent,
+    AdminBlogsComponent,
+    BlogComponent,
+    BlogListComponent,
+    ViewBlogComponent,
+    EditBlogComponent,
+    BlogsPageComponent,
+    AdminOrdersComponent,
+    ViewOrdersComponent,
+    CartOrdersItemComponent,
+    CartOrdersListComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +104,9 @@ import { CartItemComponent } from './cart-products/cart-item/cart-item.component
     ProductService,
     BlogService,
     CartService,
+    UserService,
+    DatePipe,
+    OrderService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

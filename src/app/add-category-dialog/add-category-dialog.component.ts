@@ -11,33 +11,33 @@ import { CategoryService } from '../services/CategoryService.service';
   styleUrls: ['./add-category-dialog.component.css']
 })
 export class AddCategoryDialogComponent {
-  addCategoryForm: FormGroup;
+  // addCategoryForm: FormGroup;
 
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute,
-    private categoryService: CategoryService, private toast: ToastrService) { }
+  // constructor(private router: Router, private activatedRoute: ActivatedRoute,
+  //   private categoryService: CategoryService, private toast: ToastrService) { }
 
-  private initializeForm() {
-    this.addCategoryForm = new FormGroup({
-      'categoryName': new FormControl(null, Validators.required),
-    });
-  }
+  // private initializeForm() {
+  //   this.addCategoryForm = new FormGroup({
+  //     'categoryName': new FormControl(null, Validators.required),
+  //   });
+  // }
 
-  ngOnInit() {
-    this.initializeForm();
-  }
+  // ngOnInit() {
+  //   this.initializeForm();
+  // }
 
-  onClose() {
-    this.router.navigate(['./'], { relativeTo: this.activatedRoute });
+  // onClose() {
+  //   this.router.navigate(['./'], { relativeTo: this.activatedRoute });
 
-  }
-  onAddCategory() {
-    this.categoryService.onAddCategory(this.addCategoryForm).subscribe(data => {
-      this.addCategoryForm.reset();
-      this.toast.success(data.message);
-    },
-      err => {
-        this.toast.error("Couldnt Create the category samavenna")
-      });
-  }
+  // }
+  // onAddCategory() {
+  //   this.categoryService.onAddCategory(this.addCategoryForm).subscribe(data => {
+  //     this.addCategoryForm.reset();
+  //     this.toast.success(data.message);
+  //   },
+  //     err => {
+  //       this.toast.error("Couldnt Create the category samavenna")
+  //     });
+  // }
 }

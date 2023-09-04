@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductService } from '../services/ProductService.service';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'app-product-list',
@@ -7,9 +8,12 @@ import { ProductService } from '../services/ProductService.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+  @Input() product: Product;
   productList;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+    
+   }
 
 
   ngOnInit() {
@@ -19,5 +23,7 @@ export class ProductListComponent {
     this.productService.productListUpdate.subscribe(data => {
       this.productList = data;
     });
+    
+
   }
 }

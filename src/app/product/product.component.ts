@@ -14,9 +14,14 @@ export class ProductComponent {
   @Input() productItem: Product;
   @Input() index: number;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private productService: ProductService, private toastr: ToastrService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private productService: ProductService, private toastr: ToastrService) {
+    
+   }
 
   ngOnInit() {
+    this.productService.productUpdate.subscribe(data => {
+      this.productItem = data;
+    });
   }
 
   onDelete(productId) {

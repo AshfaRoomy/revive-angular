@@ -20,7 +20,7 @@
             </div>
             <div class="cart">
                 <a class="wishlist-link" routerLink="/wishlist"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                <a class="cart-link" routerLink="/cart">
+                <a class="cart-link" routerLink="/cart/cartProducts">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </div>
@@ -37,7 +37,7 @@
                 <a class="nav-link" routerLink="/productCategory/bathnbody" routerLinkActive="active">Bath & Body</a>
                 <a class="nav-link" routerLink="/productCategory/fragrance" routerLinkActive="active">Fragrance</a>
                 <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-                <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+                <a class="nav-link" routerLink="/blogs-page" routerLinkActive="active">Blog</a>
                 <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
 
 
@@ -46,7 +46,7 @@
 
         </div>
         <div class="admin">
-            <a class="nav-link" *ngIf="authenticationService.isAuthenticated()" routerLink="/admin" id="adminLink"
+            <a class="nav-link" *ngIf="authenticationService.isAuthenticated()" routerLink="/admin/admin-products" id="adminLink"
                 routerLinkActive="active">Admin</a>
         </div>
     </div>

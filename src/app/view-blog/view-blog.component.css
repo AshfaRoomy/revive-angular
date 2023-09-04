@@ -1,0 +1,12 @@
+#view-blog{
+    padding: 30px;
+}
+/* .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+} */
+.image-container img{
+     width: 575px;
+    height: 470px;
+}

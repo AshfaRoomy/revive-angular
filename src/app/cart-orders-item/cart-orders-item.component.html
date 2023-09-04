@@ -1,0 +1,21 @@
+<div style="cursor: pointer; width: 470px;" class="card clearfix">
+    <div class="card-body">
+        <div class="containerImage">
+            <img [attr.src]="cartOrderElement.cart.product.scaledImage" class="imgContainer">
+        </div>
+        <div class="container2">
+            <div class="container3">
+
+                <h5 class="card-title">Cart Orders Id {{cartOrderElement.cardOrderId}}</h5>
+                <a type="button" data-toggle="modal" data-target="#rate" *ngIf="cartOrderElement.orders.status==='Completed'"><u>Rate Me</u></a>
+
+            </div>
+
+            <p class="card-text">Product: {{cartOrderElement.cart.product.productName}}</p>
+            <div class="qtypricesize">
+                <!-- <p class="card-text">{{cartOrderElement.cart.size}} x {{cartOrderElement.cart.quantity}} </p> -->
+                <p class="card-text">Rs.{{cartOrderElement.cart.total}} </p>
+            </div>
+        </div>
+    </div>
+</div>

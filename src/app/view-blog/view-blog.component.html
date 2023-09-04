@@ -1,0 +1,40 @@
+<section id="view-blog">
+    <div class="container-fluid container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="blog-name">
+                    <h1>{{ blog.blogTitle }} </h1>
+                </div>
+                  
+        
+                    <div class="contents">
+                        <div class="image-container">
+                            <img [attr.src]="blog.image" alt="" />
+                        </div>
+                        
+                        <div class="content">
+                            <p>{{blog.blogContent}}</p>
+                        </div>
+                       
+                        <div class="row btn-row">
+                            <button class="btn btn-default" id="editBlog" data-toggle="modal"
+                                data-target="#editBlogmodal"><i class="fa fa-edit"></i>&nbsp;Edit</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+       
+        
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <app-edit-blog class="modal fade" id="editBlogmodal" tabindex="-1" role="dialog"
+                aria-labelledby="editBlogmodal" aria-hidden="true"></app-edit-blog>
+            </div>
+        </div>
+    </div>
+
+
+</section>

@@ -46,7 +46,8 @@
     width: 120px;
 }
 
-.modal-body .form-group input {
+.modal-body .form-group input ,
+.modal-body .form-group textarea{
     width: 280px;
     background: none;
     border: none;

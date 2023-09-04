@@ -1,0 +1,55 @@
+<div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col mx-auto m-3 d-flex justify-content-center">
+                    <h1 class="modal-title" id="paymentmodal">Complete your order</h1>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="paymentForm" (ngSubmit)="onPayment()">
+                    <!-- <div class="inputs"> -->
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input id="username" class="form-control" type="name" formControlName="username"
+                            [disabled]="!isDisabled">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" class="form-control" type="email" formControlName="email">
+                    </div> -->
+                    <div class="form-group">
+                        <label for="contactId">Contact Number</label>
+                        <input id="contactId" class="form-control" type="text" formControlName="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="Address">Address</label>
+                        <input id="address" class="form-control" type="text" formControlName="address">
+                    </div>
+
+                    <!-- </div> -->
+                    <!-- <div class="labels">
+                        <div class="form-group">
+                            <label for="list">Your Order</label>
+
+                        </div>
+                        
+                    </div> -->
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary closeBtnId" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary  payBtnId" [disabled]="!paymentForm.valid">Confirm
+                            Order</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

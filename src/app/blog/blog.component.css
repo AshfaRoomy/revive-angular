@@ -1,0 +1,10 @@
+.blog-card{
+    display: flex;
+    flex-direction: row;
+}
+.blog-img img{
+    /* width: 375px;
+    height: 300px; */
+    width: 300px;
+    height: 215px;
+}

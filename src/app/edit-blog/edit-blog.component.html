@@ -1,0 +1,46 @@
+<section id="edit-blog-dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="dialog-head col-md-11">
+                    <h1>Edit Blog</h1>
+                </div>
+                <div class="close-btn col-md-1">
+                    <button type="button" id="close" class="close" data-dismiss="modal" (click)="onClose()">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="editBlogForm" (ngSubmit)="onUpdateBlog()">
+                    <div class="form-group">
+                        <label for="image">Image URL</label>
+                        <input id="image" formControlName="image" #scaledImage>
+                    </div>
+                    <div class="form-group">
+                        <img [src]="scaledImage.value" class="blog-img">
+                    </div>
+                    <div class="form-group">
+                        <label for="blogTitle">Blog Title </label>
+                        <input id="blogTitle" type="text" formControlName="blogTitle">
+                    </div>
+                   
+
+                    <div class="form-group">
+                        <label for="blogContent">Blog Content </label>
+                        <input id="blogContent" type="text" formControlName="blogContent">
+                    </div>
+                   
+                  
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                            (click)="onClose()">Close</button>
+                        <button type="submit" class="btn btn-default" [disabled]="!editBlogForm.valid">Edit
+                            product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>

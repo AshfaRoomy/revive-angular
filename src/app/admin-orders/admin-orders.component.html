@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="row container" id="container">
+            <div class="col-md-3 pages">
+                <a   routerLink="/admin/admin-products" id="adminLink"
+                routerLinkActive="active">Products</a>                
+                <a   routerLink="/admin/admin-blogs" id="blogLink"
+                routerLinkActive="active">Blogs</a>
+                <a  routerLink="/admin/admin-orders" id="orderLink"
+                routerLinkActive="active">Orders</a>
+            </div>
+            <!-- <button class="btn btn-primary" data-toggle="modal" id="ordersButton"><a routerLink="orders"
+                    id="ordersLink">Orders</a> </button> -->
+                    <div class="col-md-7"></div>
+            <div class="col-md-2  add-btns">
+                <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#addBlog" id="addProductButton">Add New
+                    Blog</button> -->
+                <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#addProduct" id="addProductButton">Add New
+                    Product</button> -->
+            </div>
+            
+            <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#addCategory" id="addCategoryButton">Add
+                Category</button> -->
+        </div>
+        <div class="container">
+            <!-- <app-add-blog-dialog class="modal fade" id="addBlog" tabindex="-1" role="dialog"></app-add-blog-dialog>
+            <app-add-product-dialog class="modal fade" id="addProduct" tabindex="-1"
+                role="dialog"></app-add-product-dialog> -->
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 view-orders">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-md-6">
+            <app-cart-orders-list></app-cart-orders-list>
+        </div>
+    </div>
+</div>

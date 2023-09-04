@@ -4,7 +4,7 @@ import { Observable, Subject } from "rxjs";
 import { Injectable } from "@angular/core";
 import { TokenStorage } from "./TokenStorage.service";
 
-const API = 'http://localhost:8080/api/customer/';
+const API = 'http://localhost:8080/api/users/';
 
 
 const getHttpOptions = (token: String) => {
@@ -16,7 +16,7 @@ const getHttpOptions = (token: String) => {
     }
 }
 @Injectable()
-export class CustomerService {
+export class UserService {
     constructor(private http: HttpClient,
         private tokenStorage: TokenStorage) {
     }
@@ -24,7 +24,7 @@ export class CustomerService {
     onGetAUserService(): Observable<any> {
         const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
         const user = this.tokenStorage.getUser();
-        return this.http.get(API + "customer/" + user.id, localHttpOptions);
+        return this.http.get(API + "user/" + user.id, localHttpOptions);
     }
 
 }
