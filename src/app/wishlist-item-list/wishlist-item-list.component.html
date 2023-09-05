@@ -1,0 +1,14 @@
+
+<div class="main-container">
+    <div class="container">
+
+        <div class="item_list_div">
+            <div class="empty-img" *ngIf="count==0">
+                <img [src]="emptywishlist" class="img-fluid">
+            </div>
+            <app-wishlist-item class="wishlistItem" *ngFor="let item of wishlist" [wishlist]="item"></app-wishlist-item>
+        </div>
+
+    </div>
+
+</div>
