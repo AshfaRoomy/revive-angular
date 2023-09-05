@@ -20,6 +20,7 @@ import { AdminBlogsComponent } from './admin-blogs/admin-blogs.component';
 import { ViewBlogComponent } from './view-blog/view-blog.component';
 import { BlogsPageComponent } from './blogs-page/blogs-page.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { WishlistItemListComponent } from './wishlist-item-list/wishlist-item-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,6 +34,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'product', component: ProductComponent },
   { path: 'product-list', component: ProductListComponent },
+  { path: 'blogs-page', component: BlogsPageComponent },
+
   // {
   //   path: 'admin', component: AdminComponent, children: [
   //     { path: 'admin-products', component: AdminProductsComponent, children: [
@@ -58,7 +61,8 @@ const routes: Routes = [
     {path:'cartProducts', component:CartListComponent}
   ] },
   { path: 'payment', component: PaymentFormComponent },
-  { path: 'blogs-page', component:BlogsPageComponent }
+  { path: 'wishlist', component: WishlistItemListComponent },
+
 
 
 

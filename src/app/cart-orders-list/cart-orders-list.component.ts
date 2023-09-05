@@ -18,24 +18,25 @@ export class CartOrdersListComponent implements OnInit {
     // this.activatedRoute.params.subscribe(
     //   (params: Params) => {
     //     this.id = +params['id'];
-        // console.log("this is id: " + this.id);
-        // this.ordersService.onGetAllCartByOrderId(this.id).subscribe((data:CartOrders[]) => {
-        //   console.log("cart-orders working");
-        //   this.cartOrdersList = data;
-        //   console.log(data);
-        // });
+    //     console.log("this is id: " + this.id);
+    //     this.ordersService.onGetAllCartByOrderId(this.id).subscribe((data:CartOrders[]) => {
+    //       console.log("cart-orders working");
+    //       this.cartOrdersList = data;
+    //       console.log(data);
+    //     });
     //   }
     // );
-    // this.ordersService.onGetAllCartOrders().subscribe(data => {
-    //   this.list = data;
-    //   console.log(data);
-    //   this.ordersService.onGetAllCartByOrderId(this.list.orders.ordersId).subscribe((orderdata:CartOrders[]) => {
-    //     console.log("cart-orders working");
-    //     this.cartOrdersList = orderdata;
-    //     console.log(data);
-    //   });
+    this.ordersService.onGetAllCartOrders().subscribe(data => {
+      this.list = data;
+      for(let x in this.list){
+        let orderId = this.list[x].orders.ordersId;
+      this.ordersService.onGetAllCartByOrderId(orderId).subscribe((orderdata:CartOrders[]) => {
+        this.cartOrdersList = orderdata;
+        console.log(this.cartOrdersList)
+      });      
+      }
+    });
 
-    // });
     // this.blogService.blogListUpdate.subscribe(data => {
     //   this.blogList = data;
     // });

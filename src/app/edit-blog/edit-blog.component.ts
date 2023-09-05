@@ -70,7 +70,7 @@ export class EditBlogComponent {
       this.onClose();
       this.blogService.onGetBlogById(this.blogId).subscribe(data => {
         this.blogService.blogUpdate.next(data);
-        console.log(data);
+         console.log(data);
       });
 
     }, err => {

@@ -14,13 +14,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditProductComponent {
   editProductForm: FormGroup;
-  @Input() product: Product;
+  product: Product;
   categoryList;
   productId: number
   editMode;
   selectedCategory;
   category;
-  categoryName!: String
+  categoryName!: String;
 
   @Input() value;
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService, private toastr: ToastrService) {
@@ -72,14 +72,14 @@ export class EditProductComponent {
     });
   }
   onClose() {
+    console.log("here close")
     this.router.navigate(['./'], { relativeTo: this.activatedRoute });
   }
 
   onUpdateProduct() {
     this.productService.onUpdateProductByProductId(this.productId, this.editProductForm).subscribe(data => {
-      console.log("Product update!");
       this.toastr.success("Successsfully Updated");
-      this.editProductForm.reset();
+      // this.editProductForm.reset();
       this.onClose();
       this.productService.onGetProductById(this.productId).subscribe(data => {
         this.productService.productUpdate.next(data);
@@ -87,6 +87,8 @@ export class EditProductComponent {
       });
 
     }, err => {
+          this.router.navigate(['/admin-products'], { relativeTo: this.activatedRoute });
+
       this.toastr.error("Sorry Couldnt Update");
     });
   }

@@ -38,9 +38,9 @@ export class AddBlogDialogComponent {
       this.addBlogForm.reset();
       console.log(this.addBlogForm);
       this.toast.success(data.message);
-      // this.blogService.onGetAllBlog().subscribe(data => {
-      //   this.blogService.blogListUpdate.next(data);
-      // });
+      this.blogService.onGetAllBlogs().subscribe(data => {
+        this.blogService.blogListUpdate.next(data);
+      });
     },
       err => {
         this.toast.error("Couldnt add the new blog content samavenna")

@@ -43,30 +43,34 @@
 
 <section id="categories">
     <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat1.png)' }">
-        <div class="category-card">
+        <div class="category-card" routerLink="/productCategory/cosmetics" routerLinkActive="active">
             <h3>Glam Up</h3>
         </div>
     </div>
     <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat2.png)' }">
-        <div class="category-card">
+        <div class="category-card" routerLink="/productCategory/skincare" routerLinkActive="active">
             <h3>Healthy<br>Skin</h3>
         </div>
     </div>
     <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat3.png)' }">
-        <div class="category-card">
+        <div class="category-card" routerLink="/productCategory/haircare" routerLinkActive="active">
             <h3>Voluminous<br>Hair</h3>
         </div>
     </div>
     <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat4.png)' }">
-        <div class="category-card">
+        <div class="category-card" routerLink="/productCategory/fragrance" routerLinkActive="active">
             <h3>Fragrance</h3>
         </div>
     </div>
     <div class="category-container" [ngStyle]="{ background: 'url(assets/images/categories/cat5.png)' }">
-        <div class="category-card">
+        <div class="category-card" routerLink="/productCategory/bathnbody" routerLinkActive="active">
             <h3>Body<br>Lotions</h3>
         </div>
     </div>
+</section>
+
+<section id="cosmetics">
+    
 </section>
 
 <section id="banner" [ngStyle]="{ background: 'url(assets/images/banner1.png)' }">

@@ -59,20 +59,20 @@ export class OrderService {
     }
     onGetAOrderById(id): Observable<any> {
         const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
-        return this.http.get(API + 'order/' + id, localHttpOptions)
+        return this.http.get(API + '/order/' + id, localHttpOptions)
     }
-    onUpdateOrderStatusByOrderId(status, id): Observable<any> {
-        const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
-        return this.http.put(API + 'order-status/' + id + "/" + status, localHttpOptions)
-    }
-    onGetAllUserOrdersByStatus(orderStatus): Observable<any> {
-        const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
-        this.customer = this.tokenStorage.getUser();
-        return this.http.get(API + 'status/' + orderStatus + '/user/' + this.customer.id, localHttpOptions)
-    }
+    // onUpdateOrderStatusByOrderId(status, id): Observable<any> {
+    //     const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
+    //     return this.http.put(API + 'order-status/' + id + "/" + status, localHttpOptions)
+    // }
+    // onGetAllUserOrdersByStatus(orderStatus): Observable<any> {
+    //     const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
+    //     this.customer = this.tokenStorage.getUser();
+    //     return this.http.get(API + 'status/' + orderStatus + '/user/' + this.customer.id, localHttpOptions)
+    // }
     onGetAllCartOrdersByUserId(): Observable<any> {
         const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
         this.customer = this.tokenStorage.getUser();
-        return this.http.get(API + 'cart-orders/' + this.customer.id, localHttpOptions)
+        return this.http.get(API + '/cart-orders/' + this.customer.id, localHttpOptions)
     }
 }   

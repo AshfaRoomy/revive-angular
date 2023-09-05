@@ -28,8 +28,8 @@ export class ViewBlogComponent {
 
       });
 
-    this.blogService.blogUpdate.subscribe(data => {
-      this.blog = data;
+    this.blogService.blogUpdate.subscribe(updateBlog => {
+      this.blog = updateBlog;
     });
 
 

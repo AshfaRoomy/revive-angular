@@ -1,21 +1,28 @@
 <div style="cursor: pointer; width: 470px;" class="card clearfix">
     <div class="card-body">
-        <div class="containerImage">
-            <img [attr.src]="cartOrderElement.cart.product.scaledImage" class="imgContainer">
+        <!-- <div class="containerImage">
+            <img [attr.src]="cartOrderElement?.cart.product.image" class="imgContainer">
+        </div> -->
+        <div class="id">
+          <p>Order Id</p><h1>{{cartOrderElement.orders.ordersId}}</h1>
         </div>
-        <div class="container2">
-            <div class="container3">
+        
+            <div class="container">
 
-                <h5 class="card-title">Cart Orders Id {{cartOrderElement.cardOrderId}}</h5>
-                <a type="button" data-toggle="modal" data-target="#rate" *ngIf="cartOrderElement.orders.status==='Completed'"><u>Rate Me</u></a>
-
+                <h3 class="card-title">Username: {{cartOrderElement.orders.user.username}}</h3>
+                <!-- <a type="button" data-toggle="modal" data-target="#rate" *ngIf="cartOrderElement.orders.status==='Completed'"><u>Rate Me</u></a> -->
+                <p class="card-text">Address: {{cartOrderElement.orders.address}}</p>
+                <p class="card-text">Rs.{{cartOrderElement.orders.total}}.00 </p>
             </div>
 
-            <p class="card-text">Product: {{cartOrderElement.cart.product.productName}}</p>
-            <div class="qtypricesize">
-                <!-- <p class="card-text">{{cartOrderElement.cart.size}} x {{cartOrderElement.cart.quantity}} </p> -->
-                <p class="card-text">Rs.{{cartOrderElement.cart.total}} </p>
-            </div>
-        </div>
+           
+
+            <!-- <div class="qtypricesize">
+                <p class="card-text">{{cartOrderElement.cart.size}} x {{cartOrderElement.cart.quantity}} </p>
+                <p class="card-text">Rs.{{cartOrderElement.orders.total}} </p>
+            </div> -->
+       <div class="button"><button class="btn btn-default" [routerLink]="[cartOrderElement.orders.ordersId]" routerLinkActive="active">View
+        Order </button></div>
+        
     </div>
 </div>

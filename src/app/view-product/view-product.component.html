@@ -9,14 +9,18 @@
                 <div class="prod-name">
                     <h1>{{ product.productName }} </h1>
                 </div>
-                <div class="prod-desc">
-                    <p>{{product.description}}</p>
+                <div class="prod-name">
+                    <p>{{ product.brand }}</p>
                 </div>
+                
                 <div class="prod-price">
                     <p>{{ product.price | currency : "Rs." }}</p>
                 </div>
                 <div class="prod-qty">
                     <p>Available Quantity: {{ product.quantity }}</p>
+                </div>
+                <div class="prod-desc">
+                    <p>{{product.description}}</p>
                 </div>
                 <div class="row btn-row">
                     <button class="btn btn-default" id="editProduct" data-toggle="modal"

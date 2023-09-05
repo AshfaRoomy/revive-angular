@@ -51,6 +51,11 @@ import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { ViewOrdersComponent } from './view-orders/view-orders.component';
 import { CartOrdersItemComponent } from './cart-orders-item/cart-orders-item.component';
 import { CartOrdersListComponent } from './cart-orders-list/cart-orders-list.component';
+import { WishlistItemComponent } from './wishlist-item/wishlist-item.component';
+import { WishlistItemListComponent } from './wishlist-item-list/wishlist-item-list.component';
+import { WishlistService } from './services/WishlistService.service';
+import { CustomerOrderItemComponent } from './customer-order-item/customer-order-item.component';
+import { CustomerOrderItemListComponent } from './customer-order-item-list/customer-order-item-list.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +92,10 @@ import { CartOrdersListComponent } from './cart-orders-list/cart-orders-list.com
     ViewOrdersComponent,
     CartOrdersItemComponent,
     CartOrdersListComponent,
+    WishlistItemComponent,
+    WishlistItemListComponent,
+    CustomerOrderItemComponent,
+    CustomerOrderItemListComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,6 +116,7 @@ import { CartOrdersListComponent } from './cart-orders-list/cart-orders-list.com
     UserService,
     DatePipe,
     OrderService,
+    WishlistService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

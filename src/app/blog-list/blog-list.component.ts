@@ -9,23 +9,31 @@ import { BlogService } from '../services/BlogService.service';
 })
 export class BlogListComponent {
   @Input() blog: Blog;
-   blogList;
+  blogList: Blog[] =[];
  
    constructor(private blogService: BlogService) {
-     
     }
  
  
    ngOnInit() {
      this.blogService.onGetAllBlogs().subscribe(data => {
        this.blogList = data;
-       console.log(data);
+       console.log("blog list: ", data);
+      
+     });
+     this.blogService.blogListUpdate.subscribe(updateData => {
+      this.blogList = updateData;
+    });
+    
+    this.blogService.blogUpdate.subscribe((data: Blog) => {
+      // Find the index of the updated blog in blogList
+      const index = this.blogList.findIndex(blog => blog.blogId === data.blogId);
 
-     });
-     this.blogService.blogListUpdate.subscribe(data => {
-       this.blogList = data;
-     });
-     
+      if (index !== -1) {
+        // Update the blog in blogList
+        this.blogList[index] = data;
+      }
+    });
  
    }
 }

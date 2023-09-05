@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/ProductService.service';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,9 @@ export class HomeComponent implements OnInit {
   feature3: String;
   feature4: String;
   feature5: String;
+catproductList;
 
-
-  constructor() {
+  constructor(private productService: ProductService) {
     this.feature1 = 'assets/images/features/f1.png';
     this.feature2 = 'assets/images/features/f2.png';
     this.feature3 = 'assets/images/features/f3.png';
@@ -25,6 +26,11 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
+    this.productService.onGetAllProductByCategoryName("cosmetics").subscribe(data => {
+      this.catproductList = data;
+      console.log(data);
+
+    })
 
   }
 }

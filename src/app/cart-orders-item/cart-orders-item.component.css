@@ -1,28 +1,31 @@
-img {
-    width: 45%;
+.card{
+    height: 80vh;
 }
-
 .card-body {
+    font-family: "DM Sans", serif;
     display: flex;
     padding: 0;
-}
-
-.imgContainer {
-    width: 70%;
-    height: 100%;
-}
-
-.qtypricesize {
-    display: flex;
-    width: 25vw;
     justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+.id{
+    background-color: #67807A;
+    border: 4px solid #435854;
+    color: #fff;
+    border-radius: 8px;
+    height: 90px;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+}
+.id p{
+    font-size: 10px;
+}
+.container{
+
 }
 
-.container3 {
-    display: flex;
-    justify-content: space-between;
-}
 
-a {
-    color: rgb(122, 32, 47);
-}
+
+

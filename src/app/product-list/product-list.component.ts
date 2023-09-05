@@ -9,7 +9,7 @@ import { Product } from '../models/Product';
 })
 export class ProductListComponent {
   @Input() product: Product;
-  productList;
+  productList: Product[] =[];
 
   constructor(private productService: ProductService) {
     
@@ -20,10 +20,22 @@ export class ProductListComponent {
     this.productService.onGetAllProducts().subscribe(data => {
       this.productList = data;
     });
+    
+
     this.productService.productListUpdate.subscribe(data => {
       this.productList = data;
     });
-    
 
+    this.productService.productUpdate.subscribe((data: Product) => {
+      // Find the index of the updated product in productList
+      const index = this.productList.findIndex(product => product.productId === data.productId);
+
+      if (index !== -1) {
+        // Update the product in productList
+        this.productList[index] = data;
+      }
+    });
   }
+
 }
+

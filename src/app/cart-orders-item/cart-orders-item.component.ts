@@ -14,7 +14,6 @@ export class CartOrdersItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("cartElement:", this.cartOrderElement);
   }
 
 }
