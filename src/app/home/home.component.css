@@ -200,7 +200,16 @@
     background-color: #67807A;
 }
 /* ===============================Product Slider==========================*/
-.product-item {
+swiper-slide{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+
+}
+/* .product-item {
     font-family: "DM Sans", serif;
     font-size: 14px;
     line-height: 16px;
@@ -293,4 +302,4 @@
 #favourite {
     color: red;
     text-shadow: 1px 1px 1px;
-}
+} */

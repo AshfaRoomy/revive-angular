@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -57,7 +57,10 @@ import { WishlistService } from './services/WishlistService.service';
 import { CustomerOrderItemComponent } from './customer-order-item/customer-order-item.component';
 import { CustomerOrderItemListComponent } from './customer-order-item-list/customer-order-item-list.component';
 import { CustomerOrderDetailsItemComponent } from './customer-order-details-item/customer-order-details-item.component';
-
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 @NgModule({
   declarations: [
     AppComponent,
@@ -128,6 +131,7 @@ import { CustomerOrderDetailsItemComponent } from './customer-order-details-item
       useClass: HashLocationStrategy
     }],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

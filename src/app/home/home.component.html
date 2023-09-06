@@ -68,38 +68,38 @@
         </div>
     </div>
 </section>
+<swiper-container>
+    <swiper-slide>  
+        <app-category-product-item  class="productElement" *ngFor="let product of cosmeticProductList.slice(0, 4)" [productElement]="product"></app-category-product-item >
+        </swiper-slide>   
+    
+    <swiper-slide>  
+        <!-- <app-category-product-item class="productElement" *ngFor="let product of catproductList"
+        [productElement]="product"></app-category-product-item> -->
+        <app-category-product-item  class="productElement" *ngFor="let product of cosmeticProductList.slice(3, 7)" [productElement]="product"></app-category-product-item >
+    </swiper-slide> ...
+  </swiper-container>
+  
+<!-- <swiper-container>
+    <swiper-slide>  
+        <app-category-product-item  class="productItem" *ngFor="let product of skinCareProductList.slice(0, 3)" [productElement]="product"></app-category-product-item >
+    </swiper-slide>    
+    
+    <swiper-slide>  
+        <app-category-product-item  class="productItem" *ngFor="let product of skinCareProductList.slice(4, 6)" [productElement]="product"></app-category-product-item >
+    </swiper-slide> ...
+  </swiper-container> -->
 
-<!-- <section id="cosmetics">
-    <div class="content-section implementation carousel-demo">
-        <div class="card">
-            <p-carousel [value]="productElements" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1"
-            [circular]="true" [autoplayInterval]="0" [responsiveOptions]="responsiveOptions">
-                <ng-template let-productElement pTemplate="item">
-                  <div class="item card">
-                    
-                    <div class="img-div">
-                        <img [attr.src]="productElement.image" class="prod-img" alt="" />
-                        <div class="overlay">
-                            <p> <a (click)="quickView(productElement.productId)" id="quickviewLink">quick view</a> |
-                                <a><i class="fa-solid fa-cart-plus"  (click)="onAddToCart(productElement.productId, productElement.price)"></i></a>
-                
-                                <span style="position: absolute;" id="notFavourite" *ngIf="!isFavourite"><i class="heart fa fa-heart"
-                                        (click)="onAddRemoveWishlist(productElement.productId)"></i></span>
-                                <span style="position: absolute;" id="favourite" *ngIf="isFavourite"> 
-                                    <i class="heart fa fa-heart" (click)="onAddRemoveWishlist(productElement.productId)"></i>
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                    <p class="name">{{ productElement.productName }} </p>
-                    <p class="brand">{{ productElement.brand}}</p>
-                    <p class="price">{{ productElement.price | currency : "Rs." }}</p> 
-                  </div>
-                </ng-template>
-            </p-carousel>
-        </div>
-      </div>
-</section> -->
+  
+<!-- <swiper-container>
+    <swiper-slide>  
+        <app-category-product-item  class="productItem" *ngFor="let product of hairCareProductList.slice(0, 3)" [productElement]="product"></app-category-product-item >
+    </swiper-slide>  
+    
+    <swiper-slide>  
+        <app-category-product-item  class="productItem" *ngFor="let product of hairCareProductList.slice(4, 6)" [productElement]="product"></app-category-product-item >
+    </swiper-slide>    ...
+  </swiper-container> -->
 
 <section id="banner" [ngStyle]="{ background: 'url(assets/images/banner1.png)' }">
     <div class="banner-container">
@@ -118,9 +118,4 @@
 
 </section>
 
-<!-- <img [src]="catproductList.image" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{image.random}}</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div> -->
+

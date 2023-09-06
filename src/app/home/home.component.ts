@@ -6,7 +6,6 @@ import { Product } from '../models/Product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../services/CartService.service';
-// import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +18,11 @@ export class HomeComponent implements OnInit {
   feature3: String;
   feature4: String;
   feature5: String;
-  // responsiveOptions;
   @Input() productElement: Product;
+  cosmeticProductList;
+  skinCareProductList;
+  hairCareProductList;
+
   isFavourite: boolean;
   wishlistProduct: any;
 
@@ -30,11 +32,7 @@ export class HomeComponent implements OnInit {
     this.feature3 = 'assets/images/features/f3.png';
     this.feature4 = 'assets/images/features/f4.png';
     this.feature5 = 'assets/images/features/f5.png';
-  //   this.responsiveOptions = [{
-  //     breakpoint: '1024px',
-  //     numVisible: 1,
-  //     numScroll: 3
-  // }];
+  
 
   }
 
@@ -42,11 +40,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.productService.onGetAllProductByCategoryName("cosmetics").subscribe(data => {
-      this.productElement = data;
+      this.cosmeticProductList = data;
       console.log(data);
-
     });
-
+    this.productService.onGetAllProductByCategoryName("haircare").subscribe(data => {
+      this.hairCareProductList = data;
+      console.log(data);
+    });
+    this.productService.onGetAllProductByCategoryName("skincare").subscribe(data => {
+      this.skinCareProductList = data;
+      console.log(data);
+    });
     if (this.authenticationService.loggedIn()) {
       this.wishlistService.getAWishlistProductService(this.productElement.productId).subscribe((data) => {
         this.wishlistProduct = data;
