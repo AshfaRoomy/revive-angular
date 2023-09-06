@@ -11,7 +11,7 @@
                 <p>{{ blogElement.blogContent }}</p>
             </div>
             <div class="prod-icons">
-                <button class="btn btn-default" [routerLink]="[blogElement.blogId]" *ngIf="authenticationService.isAuthenticated()"routerLinkActive="active">View
+                <button class="btn btn-default" [routerLink]="[blogElement.blogId]" *ngIf="authenticationService.isAuthenticated()" routerLinkActive="active">View
                     Blog </button>
                 <button class="btn btn-default trash" (click)="onDelete(blogElement.blogId)"  *ngIf="authenticationService.isAuthenticated()"><i
                         class="fa-solid fa-trash"></i></button>

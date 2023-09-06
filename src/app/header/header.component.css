@@ -59,8 +59,11 @@
 }
 
 #header .main-bar .register a:hover,
-#header .main-bar .cart i:hover {
+#header .main-bar .cart i:hover,
+#header .main-bar .cart a:hover,
+#header .main-bar .cart a:focus{
     color: #000;
+    text-decoration: none;
 }
 
 #header .main-bar .cart {
@@ -73,6 +76,12 @@
     font-size: 16px;
     padding: 12px;
     margin-top: 18px;
+}
+#header .main-bar .cart a{
+    color: #4c4c4c;
+    font-size: 13px;
+    /* padding: 5px; */
+    /* margin-top: 18px; */
 }
 
 #header2 {

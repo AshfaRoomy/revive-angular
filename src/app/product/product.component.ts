@@ -19,9 +19,7 @@ export class ProductComponent {
    }
 
   ngOnInit() {
-    // this.productService.productUpdate.subscribe(data => {
-    //   this.productItem = data;
-    // });
+   
   }
 
   onDelete(productId) {

@@ -45,29 +45,13 @@ export class WishlistItemComponent {
 
       });
   }
-  // onAddToCart() {
 
-  //   if (!this.qty) {
-  //     this.qty = 1;
-  //   }
-  //   if (!this.size) {
-  //     this.size = "M";
-  //   }
-  //   console.log(this.wishlist.product.productId, this.qty, this.size);
-  //   let total = this.wishlist.product.price * this.qty;
-  //   this.cartService.onAddCartService(this.wishlist.product.productId, this.qty, this.size, total).subscribe(data => {
-  //     console.log(data);
-  //     this.toastr.success(data.message);
-  //   },
-  //     err => {
-  //       this.toastr.error("Sorry! Couldnt add to the cart something went wrong");
-  //     });
-  // }
   onAddToCart(productId,price){
     const totalAmount =  1 * price;
     this.cartService.onAddCartService(this.wishlist.product.productId, 1, totalAmount).subscribe(data => {
       console.log(data);
       // this.cartService.cartListCountChange.next();
+      this.onRemoveWishlistItem(productId);
       this.toastr.success(data.message);
     });
   }

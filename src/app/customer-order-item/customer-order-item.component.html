@@ -1,1 +1,42 @@
-<p>customer-order-item works!</p>
+<!-- <div class="container_main">
+    <div class="card card-flip h-100">
+        <div class="card-body">
+            <div class="container">
+                <h6>Order Id {{custOrderElement.orders.ordersId}}</h6>
+                <span style="cursor: pointer;" id="info" type="button" (click)="onOrderDetail(custOrderElement.ordersId)"><i class="fa fa-info"></i></span>
+            </div>
+            <div class="dateContainer">
+                <p>Date</p>
+                <p>{{custOrderElement.orders.date}}</p>
+            </div>
+            <div class="priceContainer">
+                <p>Total Price: </p>
+                <p>{{custOrderElement.orders.total}}</p>
+            </div>
+            <p style="margin: 3%;">Address: {{custOrderElement.orders.address}}</p>
+
+        </div>
+    </div>
+</div> -->
+<section id="cart-orders">
+    <div class="cart-order-body">
+        <div class="id">
+            <p>Order Id:</p>
+            <h1>{{custOrderElement.ordersId}}</h1>
+        </div>
+        <div class="container">
+            <p class="card-date">{{custOrderElement.date}}</p>
+
+            <h3 class="card-title">Username: {{custOrderElement.user.username}}</h3>
+            <p class="card-text">Address: {{custOrderElement.address}}</p>
+        </div>
+        <span style="cursor: pointer;" id="info" type="button" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="!authenticationService.isAuthenticated()"><i class="fa fa-info"></i></span>
+        <button class="view-order" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="authenticationService.isAuthenticated()">View Order</button>
+        <!-- <div class="cart-list-container">
+            <app-cart-item class="cartItem" *ngFor="let item of cartOrderElement" [cart]="item" [index]="item.cartId">
+                
+            </app-cart-item>
+        </div> -->
+    </div>
+</section>
+

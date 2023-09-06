@@ -81,15 +81,15 @@ export class PaymentFormComponent {
   onPayment() {
         this.orderService.onAddOrdersService(this.paymentForm, this.currentDateFormatted, this.totPrice).subscribe(data => {
             this.savedOrder = data;
-            console.log("data here look: ",data)
+            // console.log("data here look: ",data)
             this.cartService.onGetAllCartItemByCustomerIdService().subscribe(data => {
                 this.cartList = data;
-                console.log("other data zoro: ", this.cartList)
+                // console.log("other data zoro: ", this.cartList)
                 for (let cart of this.cartList) {
                     this.cartOrders = new CartOrders(this.savedOrder, cart);
-                    console.log("data here: ",this.cartOrders)
+                    // console.log("data here: ",this.cartOrders)
                     this.orderService.onAddCartOrdersService(this.cartOrders).subscribe(datal => {
-                      console.log("datal: ",datal)
+                      // console.log("datal: ",datal)
                         this.cartService.onGetAllCartItemByCustomerIdService().subscribe(data => {
                           console.log("cart list count here: ",data)
                             // this.cartService.cartListCountChange.next(data);
@@ -100,7 +100,7 @@ export class PaymentFormComponent {
 
                         // this.toastr.success("Your order is completed successfully!");
                         this.onClose();
-                        this.router.navigate(['order-confirmation']);
+                        this.router.navigate(['orders']);
 
                     }, err => {
                         console.log("details", this.currentDateFormatted, this.totPrice, this.paymentForm)

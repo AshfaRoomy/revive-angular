@@ -10,7 +10,7 @@ export class CartListComponent {
   @Output() totPrice;
   emptycartimg: String;
   cartList;
-  count;
+  count=0;
   // total;
   constructor(private cartService: CartService) {
     this.emptycartimg = 'assets/images/emptycart.png';

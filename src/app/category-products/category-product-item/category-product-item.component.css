@@ -1,5 +1,107 @@
+
+
+/* .banner {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0 20px 0;
+} */
+
+/* .products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 30px;
+} */
+
+.product-item {
+    font-family: "DM Sans", serif;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    color: #242424;
+    font-weight: 700;
+    margin: 10px 40px 10px 40px;
+    cursor: pointer;
+}
+
+.product-item p {
+    margin: 0;
+    padding: 1px;
+}
+.product-item p.brand{
+    font-size: 11px;
+    font-weight: 400;
+
+}
+
+.img-div {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 280px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.img-div .prod-img {
+    display: block;
+    transition: transform .4s;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s ease;
+}
+
+.img-div:hover .overlay {
+    height: 10%;
+}
+.img-div:hover img{
+    transform: scale(1.05);
+    transform-origin: 50% 50%;
+}
+.img-div p {
+    position: absolute;
+    width: 330px;
+    color: #fff;
+    background-color: #00000091;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-div p a {
+    color: #fff;
+    padding: 0 10px;
+}
+
+.img-div p a:hover {
+    text-decoration: none;
+    color: #ffd000;
+}
+
+.img-div p i {
+    font-size: 12px;
+}
+
 #notFavourite {
-    color: black;
+    color: #fff;
     text-shadow: 1px 1px 1px;
 }
 

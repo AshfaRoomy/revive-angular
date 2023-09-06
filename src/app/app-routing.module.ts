@@ -21,6 +21,9 @@ import { ViewBlogComponent } from './view-blog/view-blog.component';
 import { BlogsPageComponent } from './blogs-page/blogs-page.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { WishlistItemListComponent } from './wishlist-item-list/wishlist-item-list.component';
+import { CustomerOrderItemListComponent } from './customer-order-item-list/customer-order-item-list.component';
+import { CustomerOrderItemComponent } from './customer-order-item/customer-order-item.component';
+import { CustomerOrderDetailsItemComponent } from './customer-order-details-item/customer-order-details-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,6 +46,9 @@ const routes: Routes = [
 
   //   ]
   // },
+  { path: 'orders', component: CustomerOrderItemListComponent, children:[
+    {path:'details/:id',component:CustomerOrderDetailsItemComponent}] },
+    
   { path: 'admin/admin-products', component: AdminProductsComponent, children: [
           { path: ':id', component: ViewProductComponent }] },
 
@@ -50,7 +56,7 @@ const routes: Routes = [
             { path: ':id', component: ViewBlogComponent }] },
 
   { path: 'admin/admin-orders', component: AdminOrdersComponent, children: [
-              { path: ':id', component: ViewBlogComponent }] },
+              { path: 'details/:id', component: CustomerOrderDetailsItemComponent }] },
 
   { path: 'productCategory', component: CategoryProductsComponent,children:[
     {path:':category', component:CategoryProductListComponent}

@@ -9,23 +9,18 @@
                 <a  routerLink="/admin/admin-orders" id="orderLink"
                 routerLinkActive="active">Orders</a>
             </div>
-            <!-- <button class="btn btn-primary" data-toggle="modal" id="ordersButton"><a routerLink="orders"
-                    id="ordersLink">Orders</a> </button> -->
+           
                     <div class="col-md-7"></div>
             <div class="col-md-2  add-btns">
                 <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#addBlog" id="addProductButton">Add New
                     Blog</button> -->
-                <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#addProduct" id="addProductButton">Add New
-                    Product</button> -->
             </div>
             
-            <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#addCategory" id="addCategoryButton">Add
-                Category</button> -->
+            
         </div>
         <div class="container">
-            <!-- <app-add-blog-dialog class="modal fade" id="addBlog" tabindex="-1" role="dialog"></app-add-blog-dialog>
-            <app-add-product-dialog class="modal fade" id="addProduct" tabindex="-1"
-                role="dialog"></app-add-product-dialog> -->
+            <!-- <app-add-blog-dialog class="modal fade" id="addBlog" tabindex="-1" role="dialog"></app-add-blog-dialog> -->
+           
             
         </div>
     </div>
@@ -34,7 +29,19 @@
             <router-outlet></router-outlet>
         </div>
         <div class="col-md-6">
-            <app-cart-orders-list></app-cart-orders-list>
+            <div class="containersm">
+                <div class="row">
+                    <div class="col-md-7">
+                       
+                        <div class="item_list_div">
+                            <img *ngIf="count==0" src="https://cdn.dribbble.com/users/429792/screenshots/3649946/no_order.png" class="img-fluid">
+                            <app-customer-order-item class="orderItem" *ngFor="let x of orderList" [custOrderElement]="x"></app-customer-order-item>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            </div>        
         </div>
     </div>
 </div>

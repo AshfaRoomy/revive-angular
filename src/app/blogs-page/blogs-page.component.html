@@ -1,6 +1,20 @@
-<div class="blog-list">
+<!-- <div class="blog-list">
     <div class="blog-container">
         <app-blog class="blogElement" *ngFor="let blog of blogList" [blogElement]="blog"></app-blog>
     </div>
    
-</div>
+</div> -->
+<section id="customers-blog-page">
+    <div class="container-fluid">
+        <div class="col-md-7 view-prod">
+                <router-outlet></router-outlet>
+                <app-blog-list></app-blog-list>
+
+                <!-- <app-view-blog></app-view-blog> -->
+        </div>
+        <div class="col-md-5">
+                <app-blog-list></app-blog-list>
+        </div>
+        
+    </div>
+</section>

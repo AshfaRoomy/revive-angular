@@ -56,6 +56,7 @@ import { WishlistItemListComponent } from './wishlist-item-list/wishlist-item-li
 import { WishlistService } from './services/WishlistService.service';
 import { CustomerOrderItemComponent } from './customer-order-item/customer-order-item.component';
 import { CustomerOrderItemListComponent } from './customer-order-item-list/customer-order-item-list.component';
+import { CustomerOrderDetailsItemComponent } from './customer-order-details-item/customer-order-details-item.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { CustomerOrderItemListComponent } from './customer-order-item-list/custo
     WishlistItemListComponent,
     CustomerOrderItemComponent,
     CustomerOrderItemListComponent,
+    CustomerOrderDetailsItemComponent,
   ],
   imports: [
     BrowserModule,

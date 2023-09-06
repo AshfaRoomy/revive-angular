@@ -1,0 +1,18 @@
+<div class="container-sm" style="padding: 5%;">
+    <div class="row">
+        <!-- <div class="col-md-4" style="padding: 0;">
+            <button class="btn btn-primary" *ngIf="isPendidngAdvancedRoute()" (click)="onOrdersStateChange()">Cancel Pending</button>
+            <button class="btn btn-primary" *ngIf="isCancelledAdvancedRoute()" (click)="onOrdersStateChange()">Re-Order</button>
+        </div> -->
+        <div class="col-md-8">
+            <h4 class="card-title">Order Id #{{id}} </h4>
+            <h5 class="card-title">Date {{date}}</h5>
+            <h5 class="card-title">Username: {{username}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Address: {{address}}</h6>
+
+            <hr>
+            <!-- <h6>Shipping Details</h6> -->
+        </div>
+        <app-cart-orders-list></app-cart-orders-list>
+    </div>
+</div>

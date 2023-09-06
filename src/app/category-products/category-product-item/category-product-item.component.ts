@@ -17,7 +17,7 @@ export class CategoryProductItemComponent {
   wishlistProduct: any;
 
   constructor(
-    private authService: AuthenticationService,
+    private authenticationService: AuthenticationService,
     private toastr: ToastrService,
     private wishlistService: WishlistService,
     private router: Router,
@@ -26,7 +26,7 @@ export class CategoryProductItemComponent {
   ) { }
 
   ngOnInit() {
-    if (this.authService.loggedIn()) {
+    if (this.authenticationService.loggedIn()) {
       this.wishlistService.getAWishlistProductService(this.productElement.productId).subscribe((data) => {
         this.wishlistProduct = data;
         if (data != null) {
@@ -44,16 +44,24 @@ export class CategoryProductItemComponent {
     this.router.navigate(["/detail/" + productId], { relativeTo: this.activatedRoute })
   }
   onAddToCart(productId,price){
-    const totalAmount =  1 * price;
-    this.cartService.onAddCartService(productId, 1, totalAmount).subscribe(data => {
-      console.log(data);
-      // this.cartService.cartListCountChange.next();
-      this.toastr.success(data.message);
-    });
+    if (this.authenticationService.loggedIn()){
+      const totalAmount =  1 * price;
+      this.cartService.onAddCartService(productId, 1, totalAmount).subscribe(data => {
+        console.log(data);
+        // this.cartService.cartListCountChange.next();
+        this.toastr.success(data.message);
+      });
+    }else{
+      this.router.navigate(['login']);
+
+      this.toastr.warning("Please login to add product to your cart");
+
+    }
+    
   }
 
   onAddRemoveWishlist(productId) {
-    if (this.authService.loggedIn()) {
+    if (this.authenticationService.loggedIn()) {
       this.wishlistService.onAddRemoveWishlistService(productId).subscribe((data: any) => {
         if (this.isFavourite == true) {
           this.isFavourite = false;

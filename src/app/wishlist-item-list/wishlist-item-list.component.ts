@@ -9,7 +9,7 @@ import { TokenStorage } from '../services/TokenStorage.service';
 })
 export class WishlistItemListComponent {
   wishlist;
-  count: number;
+  count = 0;
   emptywishlist: String;
 
   constructor(private wishListService: WishlistService,

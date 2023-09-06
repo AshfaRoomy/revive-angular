@@ -17,11 +17,15 @@ const getHttpOptions = (token: String) => {
 
 @Injectable()
 export class OrderService {
-    updatePendingOrderList = new Subject<Orders[]>();
+    updateOrderList = new Subject<Orders[]>();
+    updateOrder = new Subject<Orders>();
     customer;
     constructor(private http: HttpClient,
         private tokenStorage: TokenStorage) {
     }
+
+
+
     onAddOrdersService(formData, date, total) {
         const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
         console.log("check the user: ",formData)
@@ -43,10 +47,24 @@ export class OrderService {
 
             }, localHttpOptions);
     }
+    onGetAllUserCartOrderByOrderId(orderId):Observable<any>{
+        const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
+        return this.http.get(API + '/all-cart-orders/' +orderId, localHttpOptions);
+    }
+  
+
+    onGetAllOrderByUser(): Observable<any>{
+        const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
+        let user =  this.tokenStorage.getUser();
+        return this.http.get(API + '/all-orders/' + user.id, localHttpOptions);
+    }
     // onGetAllPendingOrdersByStatus(status): Observable<any> {
     //     const localHttpOptions = getHttpOptions(this.tokenStorage.getToken() as String);
     //     return this.http.get(API + 'all/' + status, localHttpOptions);
     // }
+    onGetAllOrders(): Observable<any> {
+        return this.http.get(API + "/orders-all");
+    }
 
     onGetAllCartOrders(): Observable<any> {
         return this.http.get(API + "/all-cartOrders");

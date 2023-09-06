@@ -1,1 +1,17 @@
-<p>customer-order-item-list works!</p>
+<div class="containersm">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="headerContainer">
+                <p>Orders</p>
+            </div>
+            <div class="item_list_div">
+                <img *ngIf="count==0" src="https://cdn.dribbble.com/users/429792/screenshots/3649946/no_order.png" class="img-fluid">
+                <app-customer-order-item class="orderItem" *ngFor="let x of orderList" [custOrderElement]="x"></app-customer-order-item>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>

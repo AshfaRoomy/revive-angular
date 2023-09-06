@@ -23,6 +23,9 @@
                 <a class="cart-link" routerLink="/cart/cartProducts">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
+                <a class="orders-link" routerLink="/orders" *ngIf="authenticationService.loggedIn() &&  !authenticationService.isAuthenticated()">
+                    Orders
+                </a>
             </div>
         </div>
 
