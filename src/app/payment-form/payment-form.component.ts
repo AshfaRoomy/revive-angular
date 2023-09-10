@@ -58,12 +58,6 @@ export class PaymentFormComponent {
 
       });
     });
-    // this.paymentForm = new FormGroup({
-      
-    //   'username': new FormControl(null, Validators.required),
-    //   'phone': new FormControl('',  Validators.required),
-    //   'address': new FormControl(null, Validators.required)
-    // });
     this.paymentForm = new FormGroup({
       
       'username': new FormControl(null, Validators.required),
@@ -81,33 +75,27 @@ export class PaymentFormComponent {
   onPayment() {
         this.orderService.onAddOrdersService(this.paymentForm, this.currentDateFormatted, this.totPrice).subscribe(data => {
             this.savedOrder = data;
-            // console.log("data here look: ",data)
             this.cartService.onGetAllCartItemByCustomerIdService().subscribe(data => {
                 this.cartList = data;
-                // console.log("other data zoro: ", this.cartList)
                 for (let cart of this.cartList) {
                     this.cartOrders = new CartOrders(this.savedOrder, cart);
-                    // console.log("data here: ",this.cartOrders)
                     this.orderService.onAddCartOrdersService(this.cartOrders).subscribe(datal => {
-                      // console.log("datal: ",datal)
                         this.cartService.onGetAllCartItemByCustomerIdService().subscribe(data => {
                           console.log("cart list count here: ",data)
-                            // this.cartService.cartListCountChange.next(data);
+                            this.cartService.cartListCountChange.next(data);
                         });
 
                         this.paymentForm.reset();
-                        // this.onClose();
+                        // 
 
-                        // this.toastr.success("Your order is completed successfully!");
-                        this.onClose();
-                        this.router.navigate(['orders']);
-
+window.location.reload();
                     }, err => {
                         console.log("details", this.currentDateFormatted, this.totPrice, this.paymentForm)
                         this.toastr.error("Please try again later", "System failed to make your payments");
                     });
                 }
                 this.toastr.success("Your order is completed successfully, please wait for it to be delivered!")
+
             }
             )
         }

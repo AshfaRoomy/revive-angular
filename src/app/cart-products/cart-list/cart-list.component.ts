@@ -1,4 +1,5 @@
 import { Component, Output } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { CartService } from 'src/app/services/CartService.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class CartListComponent {
   cartList;
   count=0;
   // total;
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private router: Router) {
     this.emptycartimg = 'assets/images/emptycart.png';
   }
 
@@ -48,5 +49,12 @@ export class CartListComponent {
       this.count = this.cartList.length;
       this.totPrice = this.onCalculateTotal()
     });
+  }
+  onOrders(){
+    this.router.navigate(['orders']);
+  }
+  
+  onHome(){
+    this.router.navigate(['home']);
   }
 }

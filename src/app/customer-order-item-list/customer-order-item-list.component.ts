@@ -10,9 +10,12 @@ export class CustomerOrderItemListComponent {
   orderList;
   
   count;
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService) { 
+
+  }
 
   ngOnInit() {
+
     this.orderService.onGetAllOrderByUser().subscribe(data => {
       console.log("ordersList: ",data);
       this.orderList = data;

@@ -3,8 +3,11 @@
     <div class="container">
         <h1 *ngIf="count!==0">My Cart</h1>
         <hr *ngIf="count!==0">
-        <div class="empty-img">
-            <img id="emptyCart" *ngIf="count==0" [src]="emptycartimg" class="img-fluid">
+        <div class="empty-img" *ngIf="count==0" >
+            <img id="emptyCart" [src]="emptycartimg" class="img-fluid">
+         
+            <button (click)="onHome()">Return to Home</button>
+            <button (click)="onOrders()">Check Your orders</button>
 
         </div>
         <app-cart-item class="cartItem" *ngFor="let item of cartList" [cart]="item" [index]="item.cartId"></app-cart-item>
@@ -28,5 +31,5 @@
     </div>
 
 </div>
-
-<app-payment-form class="modal fade" id="payment" tabindex="-1" [totPrice]="totPrice" role="dialog"></app-payment-form>
+<app-payment-form class="modal fade" id="payment" role="dialog" aria-labelledby="paymentmodal" [totPrice]="totPrice" aria-hidden="true"></app-payment-form>
+<!-- <app-payment-form class="modal fade" id="payment" [totPrice]="totPrice" role="dialog"></app-payment-form> -->
