@@ -11,7 +11,7 @@
             <div class="container">
 
                 <!-- <a type="button" data-toggle="modal" data-target="#rate" *ngIf="cartOrderElement.orders.status==='Completed'"><u>Rate Me</u></a> -->
-                <p class="card-text">Address: {{cartOrderElement.orders.address}}</p>
+                <!-- <p class="card-text"> {{cartOrderElement.orders.user.username}}</p> -->
                 <p class="card-text">Quantity: {{cartOrderElement.cart.cartQuantity}}</p>
                 <p class="card-text">Rs.{{cartOrderElement.cart.totalPrice}}.00 </p> 
 
@@ -23,7 +23,11 @@
             <!-- <div class="total">
                 <p class="card-text">Rs.{{cartOrderElement.orders.total}}.00 </p> 
             </div> -->
-     
+            <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#rateReviewForm" id="rateReviewForm">Rate Products</button> -->
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#rate"><u>Rate Me</u></button>
+            <p>{{cartOrderElement.cart.product.productId}}</p>    
+            <app-rate-review-form [productId]="cartOrderElement.cart.product.productId"></app-rate-review-form>
+            <!-- <app-rate-review-form class="modal fade" id="rateReviewForm" tabindex="-1" role="dialog"></app-rate-review-form> -->
         
     </div>
 </div>

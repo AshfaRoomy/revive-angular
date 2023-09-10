@@ -59,6 +59,15 @@ import { CustomerOrderItemListComponent } from './customer-order-item-list/custo
 import { CustomerOrderDetailsItemComponent } from './customer-order-details-item/customer-order-details-item.component';
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
+import { RateReviewFormComponent } from './rate-review-form/rate-review-form.component';
+import { RateReviewService } from './services/RateReviewService.service';
+import { CustomerBlogComponent } from './customer-blog/customer-blog.component';
+import { CustomerBlogListComponent } from './customer-blog-list/customer-blog-list.component';
+import { NgRatingBarModule } from 'ng-rating-bar';
+import { ProductRateReviewDetailComponent } from './product-rate-review-detail/product-rate-review-detail.component';
+import { RateListComponent } from './rate-list/rate-list.component';
+import { RateItemComponent } from './rate-item/rate-item.component';
+
 // register Swiper custom elements
 register();
 @NgModule({
@@ -101,6 +110,12 @@ register();
     CustomerOrderItemComponent,
     CustomerOrderItemListComponent,
     CustomerOrderDetailsItemComponent,
+    RateReviewFormComponent,
+    CustomerBlogComponent,
+    CustomerBlogListComponent,
+    ProductRateReviewDetailComponent,
+    RateListComponent,
+    RateItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -109,8 +124,9 @@ register();
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot()
-  ],
+    ToastrModule.forRoot(),
+    NgRatingBarModule
+      ],
   providers: [
     TokenStorage,
     AuthenticationService,
@@ -122,6 +138,7 @@ register();
     DatePipe,
     OrderService,
     WishlistService,
+    RateReviewService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

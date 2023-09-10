@@ -63,40 +63,16 @@ totalAmount;
         this.toastr.error("Sorry! Couldnt add to the cart something went wrong");
       } );
       }else {
-        this.toastr.warning("Plese login to add product to your cart");
+        this.toastr.warning("Please login to add product to your cart");
       }
       
     
   }
 
+  onRatesReviews(index){
+    this.router.navigate(['/ratesReviews/'+index]);
+  }
 
-    
-  
-  // onAddToCart(qty: any) {
-  //   if (this.authenticationService.loggedIn()) {
-  //     console.log(this.productId, qty);
-  //     let total = this.product.price * qty;
-  //     this.cartService.onAddCartService(this.productId,qty,total).subscribe(data => {
-  //       this.cartService.cartListCountChange.next(data);
-  //       console.log(data);
-
-  //       // this.cartService.onGetAllCartItemByCustomerIdService(this.productId).subscribe(data => {
-  //       //   this.cartService.cartListCountChange.next(data);
-  //       // }); 
-  //       // this.cartService.cartListCountChange.subscribe(() => {
-  //       //   this.onGetCartListCount();
-  //       // });       
-  //       this.toastr.success(data.message);
-  //     },
-  //       err => {
-  //         this.toastr.error("Sorry! Couldnt add to the cart something went wrong");
-  //       });
-
-  //   } else {
-  //     this.toastr.warning("Plese login to add product to your cart");
-  //   }
-
-  // }
   onClose() {
     this.location.back();
 

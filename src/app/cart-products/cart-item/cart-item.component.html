@@ -1,48 +1,41 @@
 <div class="container_main">
     <div class="card-body">
+        <div class="row">
+            <div class="prod-card">
+                <div class="prod-img">
+                    <img [attr.src]="cart?.product.image" alt="" class="imageView">
+                </div>
 
-        <div class="prod-card">
-            <div class="prod-img">
-                <img [attr.src]="cart?.product.image" alt="" class="imageView">
-            </div>
-
-            <div class="prod-name">
-                <p>{{ cart.product.productName }}</p>
-            </div>
-            
-            <div class="prod-qty">
+                <div class="prod-name">
+                    <p>{{ cart.product.productName }}</p>
+                    <p class="brand">{{ cart.product.brand }}</p>
+                </div>
                 
-                <div><button (click)="decrementQuantity(index)">-</button></div>
-                <div>
-                    <td>{{ cart.cartQuantity }} </td>
+                <div class="prod-qty">
+                    
+                    <div><button (click)="decrementQuantity(index)">-</button></div>
+                    <div>
+                        <td>{{ cart.cartQuantity }} </td>
+                    </div>
+                    <div><button (click)="incrementQuantity(index)">+</button></div>
+
                 </div>
-                <div><button (click)="incrementQuantity(index)">+</button></div>
 
-                <!-- <p>{{cartElement.quantity}}</p> -->
-                <!-- <ng-number-picker (valueChange)="onSubmit(index)" [(value)]="cart.cartQuantity" [min]="1" [max]="cartElement.product.quantity" [step]="'1'" [pickTimer]="'100'" [size]="'small'" #qty></ng-number-picker> -->
-
-                <!-- <input class="form-control" id="quantityId" type="number" [(ngModel)] ="selectedQuantity" value="{{cart.cartQuantity}}" required min="1" > -->
-                <!-- <div><button (click)="decrementQuantity(index)">-</button></div>
-                <div>
-                    <td>{{ cart.quantity }} </td>
+                <!-- <div class="prod-price">
+                    <p>Rs.{{(cart.product.price).toFixed(2)}}</p>
+                </div> -->
+                <div class="prod-tot-price">
+                    <p>Rs.{{totPrice}}.00</p>
                 </div>
-                <div><button (click)="incrementQuantity(index)">+</button></div> -->
-
-            </div>
-
-            <!-- <div class="prod-price">
-                <p>Rs.{{(cart.product.price).toFixed(2)}}</p>
-            </div> -->
-            <div class="prod-tot-price">
-                <p>Rs.{{totPrice}}</p>
-            </div>
 
 
-            <div class="prod-icons">
+                <div class="prod-icons">
 
-                <span><i class="fa-solid fa-trash" (click)="onRemoveCartProduct(index)"></i></span>
+                    <span><i class="fa-solid fa-trash" (click)="onRemoveCartProduct(index)"></i></span>
+                </div>
             </div>
         </div>
+        
 
     </div>
 

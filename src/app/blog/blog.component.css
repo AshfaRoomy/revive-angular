@@ -1,10 +1,32 @@
-.blog-card{
+.class1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 15px;
+    /* align-items: center; */
+    /* width: 85%; */
 }
-.blog-img img{
+.class1 .blog-img img{
     /* width: 375px;
     height: 300px; */
-    width: 300px;
+    width: 90%;
     height: 215px;
+}
+.class1 .blog-name{
+    padding-top: 4px;
+}
+.class1 .blog-name a{
+    font-family: "DM Sans", serif;
+    color: #4c4c4c;
+    font-size: 15px;
+    font-weight: 600;
+}
+.class1 .blog-name a:hover{
+    text-decoration: none;
+    color: #000;
+
+}
+.class2{
+    display: flex;
+    flex-direction: row;
 }

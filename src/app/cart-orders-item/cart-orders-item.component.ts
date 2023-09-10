@@ -9,12 +9,13 @@ import { CartOrders } from '../models/CartOrders';
 export class CartOrdersItemComponent implements OnInit {
 
   @Input() cartOrderElement;
-  @Input() index;
+  index;
   constructor() { 
 
   }
 
   ngOnInit() {
+    this.index=this.cartOrderElement.cart.product.productId;
   }
 
 }

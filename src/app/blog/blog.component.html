@@ -1,15 +1,29 @@
 <section id="blogs">
-    <div class="blog-card">
+    <div class="blog-card class1" *ngIf="!authenticationService.isAuthenticated()">
         <div class="blog-img">
             <img [src]="blogElement.image" alt="">
         </div>
         <div class="blog-details">
             <div class="blog-name">
-                <p>{{ blogElement.blogTitle }}</p>
+                <a [routerLink]="[blogElement.blogId]"  routerLinkActive="active" *ngIf="!authenticationService.isAuthenticated()"><p>{{ blogElement.blogTitle }}</p></a>
+                <!-- <p *ngIf="authenticationService.isAuthenticated()">{{ blogElement.blogTitle }}</p> -->
             </div>
-            <div class="prod-content">
+           
+        </div>      
+    </div>
+    <div class="blog-card class2" *ngIf="authenticationService.isAuthenticated()">
+        <div class="blog-img">
+            
+            <img [src]="blogElement.image" alt="">
+        </div>
+        <div class="blog-details">
+            <div class="blog-name">
+                <!-- <a [routerLink]="[blogElement.blogId]"  routerLinkActive="active" *ngIf="!authenticationService.isAuthenticated()"><p>{{ blogElement.blogTitle }}</p></a> -->
+                <p *ngIf="authenticationService.isAuthenticated()">{{ blogElement.blogTitle }}</p>
+            </div>
+            <!-- <div class="prod-content">
                 <p>{{ blogElement.blogContent }}</p>
-            </div>
+            </div> -->
             <div class="prod-icons">
                 <button class="btn btn-default" [routerLink]="[blogElement.blogId]" *ngIf="authenticationService.isAuthenticated()" routerLinkActive="active">View
                     Blog </button>

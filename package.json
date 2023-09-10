@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "@auth0/angular-jwt": "^5.1.2",
+    "css-star-rating": "^1.3.1",
+    "ng-rating-bar": "^1.2.5",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.5.0",
     "swiper": "^10.2.0",

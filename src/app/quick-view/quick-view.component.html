@@ -1,8 +1,8 @@
 <section id="quick-view">
     <div class="container-fluid container">
-      <div class="clsbtn">
+      <div class="backbtn">
         <button type="button" id="close" class="close" data-dismiss="modal" (click)="onClose()">
-          <span>&times;</span>
+          <i class="fa-solid fa-arrow-left-long"></i>
         </button>
       </div>
   
@@ -15,36 +15,35 @@
           <div class="prod-name">
             <h1>{{ product.productName }} </h1>
           </div>
+          <div class="brand">
+            <p>{{product.brand}}</p>
+          </div>
+          <hr>
+<!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto nobis totam beatae necessitatibus vero consequatur at eaque odit ipsum? Ad veniam voluptatum a maiores dolor id, culpa nihil dignissimos laboriosam eaque harum, nesciunt quia quibusdam. -->
           <div class="prod-desc">
             <p>{{product.description}}</p>
+          </div>
+          <div class="prod-quantity">
+            <input class="form-control" id="quantityId" type="number" #selectedQuantity value="1" required min="1" >
           </div>
           <div class="prod-price">
             <p>{{ product.price | currency : "Rs." }}</p>
           </div>
          
-          <div class="prod-quantity">
-            <input class="form-control" id="quantityId" type="number" #selectedQuantity value="1" required min="1" >
-
-            <!-- <div class="qty-container">
-  
-              <div><button (click)="decrementQuantity()">-</button></div>
-              <div>
-                <td>{{qty}}</td>
-              </div>
-              <div><button (click)="incrementQuantity()">+</button></div>
-            </div> -->
-          </div>
+         
           <div class="buttons">
             <!-- <button class="btn btn-default" (click)="onBack()">Back</button> -->
             <button class="btn btn-default" (click)="onAddToCart()">Add to Cart</button>
             <a routerLinkActive="active" class="cart-link" routerLink="/cart/cartProducts">
               <button class="btn btn-default" *ngIf="authenticationService.loggedIn()">View Cart</button>
             </a>
-  
+            <!-- <button class="btn btn-default ratesReviews" (click)="onRatesReviews(productId)" >Rates & Reviews</button> -->
+
           </div>
+        
         </div>
       </div>
-      <ng-template #loadingTemplate>
+      <ng-template class="loading" #loadingTemplate>
         <!-- Handle loading state or display an appropriate message -->
         <img [src]="loading" alt="">
         <p>Please check your Internet connection</p>

@@ -1,18 +1,23 @@
 <div class="cartListHolder">
 
     <div class="container">
+        <h1 *ngIf="count!==0">My Cart</h1>
+        <hr *ngIf="count!==0">
+        <div class="empty-img">
+            <img id="emptyCart" *ngIf="count==0" [src]="emptycartimg" class="img-fluid">
 
-        <img id="emptyCart" *ngIf="count==0" [src]="emptycartimg" class="img-fluid">
+        </div>
         <app-cart-item class="cartItem" *ngFor="let item of cartList" [cart]="item" [index]="item.cartId"></app-cart-item>
 
         <div class="row">
-            <div class="col-md-8"></div>
+            <div class="col-md-7"></div>
             <div class="col-md-2">
                 <h6 *ngIf="count!==0">Total</h6>
             </div>
             <div class="col-md-2">
                 <h6 *ngIf="count!==0">Rs.{{totPrice}}.00</h6>
             </div>
+            <div class="col-md-1"></div>
 
 
         </div>

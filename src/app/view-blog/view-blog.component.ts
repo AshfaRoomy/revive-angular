@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Blog } from '../models/Blog';
 import { BlogService } from '../services/BlogService.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import { AuthenticationService } from '../services/AuthenticationService.service';
 
 @Component({
   selector: 'app-view-blog',
@@ -12,7 +13,7 @@ export class ViewBlogComponent {
   @Input() blog: Blog;
   blogId: number;
 
-  constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute) {
+  constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute, public authenticationService:AuthenticationService) {
 
   }
   ngOnInit() {

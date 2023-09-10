@@ -15,7 +15,7 @@ export class CategoryProductItemComponent {
   @Input() productElement: Product;
   isFavourite: boolean;
   wishlistProduct: any;
-
+  average;
   constructor(
     private authenticationService: AuthenticationService,
     private toastr: ToastrService,

@@ -24,6 +24,7 @@ import { WishlistItemListComponent } from './wishlist-item-list/wishlist-item-li
 import { CustomerOrderItemListComponent } from './customer-order-item-list/customer-order-item-list.component';
 import { CustomerOrderItemComponent } from './customer-order-item/customer-order-item.component';
 import { CustomerOrderDetailsItemComponent } from './customer-order-details-item/customer-order-details-item.component';
+import { ProductRateReviewDetailComponent } from './product-rate-review-detail/product-rate-review-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'product', component: ProductComponent },
   { path: 'product-list', component: ProductListComponent },
-  { path: 'blogs-page', component: BlogsPageComponent },
+  { path: 'blogs-page', component: BlogsPageComponent,children: [
+    { path: ':id', component: ViewBlogComponent }] },
 
   // {
   //   path: 'admin', component: AdminComponent, children: [
@@ -62,6 +64,7 @@ const routes: Routes = [
     {path:':category', component:CategoryProductListComponent}
   ] },
   { path: 'detail/:id', component: QuickViewComponent },
+  { path: 'ratesReviews/:id', component: ProductRateReviewDetailComponent },
 
   { path: 'cart', component: CartProductsComponent,children:[
     {path:'cartProducts', component:CartListComponent}

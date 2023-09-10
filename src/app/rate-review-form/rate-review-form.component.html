@@ -1,0 +1,33 @@
+<div class="modal fade" id="rate" tabindex="-1" role="dialog" aria-labelledby="rateLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rateLabel">How was your product? Tell us</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="rateReviewForm" (ngSubmit)="onSubmitRate()">
+                    <div class="form-group">
+                        <section>                           
+                            <ng-rating-bar 
+                             [control]="rateControl"
+                            [ratingCount]="5" 
+                            type="number"
+                          ></ng-rating-bar>  
+                                <!-- <bar-rating [(rate)]="average" formControlName="rate"></bar-rating> -->
+                        </section>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="feedbackId" class="form-control" type="text" formControlName="feedback"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary closeBtnId" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary rateBtnId">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
