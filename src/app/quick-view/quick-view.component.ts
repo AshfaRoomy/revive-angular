@@ -6,6 +6,7 @@ import { CartService } from '../services/CartService.service';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from '../services/AuthenticationService.service';
 import { Location } from '@angular/common';
+import { RateReviewService } from '../services/RateReviewService.service';
 
 @Component({
   selector: 'app-quick-view',
@@ -17,8 +18,9 @@ export class QuickViewComponent {
   productId: number;
   qty: number = 1;
   loading: String;
+  average;
 
-  constructor(private location: Location, private productService: ProductService, private activatedRoute: ActivatedRoute, private router: Router, private cartService: CartService, private toastr: ToastrService, public authenticationService: AuthenticationService) { 
+  constructor(private location: Location, private productService: ProductService, private activatedRoute: ActivatedRoute, private router: Router, private cartService: CartService, private toastr: ToastrService, public authenticationService: AuthenticationService, private rateService: RateReviewService) { 
     this.loading = 'assets/images/loading1.png';
 
   }
@@ -34,6 +36,11 @@ export class QuickViewComponent {
         })
 
       });
+      this.rateService.onGetRateReviewByProductId(this.productId).subscribe(data=>{
+        console.log("rate service:", data);
+        this.average = this.rateService.onCalculateAverage(data); 
+        console.log("Average Rate:", data);
+       });
 
     
   }
@@ -45,6 +52,7 @@ totalAmount;
 @ViewChild('selectedQuantity') selectedQuantity: any;
 
   onAddToCart(){
+
     // if (this.selectedQuantity.nativeElement.value == '') {
     //   this.toastr.error("Quantity not given", "Please select your quantity");
     // } else {

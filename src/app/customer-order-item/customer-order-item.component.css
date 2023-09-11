@@ -1,0 +1,45 @@
+#cart-order{
+    background-color: #f3f3f3;
+    padding: 30px;
+    width: 500px;
+    border: 0.5px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+}
+
+.id{
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    border: 2px solid #242424;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.id p,
+.id h1{
+    margin: 0;
+    padding: 0;
+}
+.id p{
+    font-size: 9px;
+}
+.id h1{
+    font-size: 17px;
+    font-weight: 600;
+}
+.container .card-date{
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c4c4c4;
+}
+.container h3{
+    font-size: 16px;
+    font-weight: 600;
+}
+.view i:hover{
+    color: #000;
+}

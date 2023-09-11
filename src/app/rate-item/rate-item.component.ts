@@ -7,17 +7,16 @@ import { RateReview } from '../models/RateReview';
   styleUrls: ['./rate-item.component.css']
 })
 export class RateItemComponent {
-  @Input() rateReviewElement: RateReview;
+  @Input() rateReviewElement;
   @Input() index: number;
-  // @ViewChild(ChildComponent) childModal: ChildComponent;
+  isFavourite: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
-  openModal(index) {
-    // const id = Math.floor(Math.random() * 50);
-    // console.log("here: "+index)
-    // this.childModal.open(index);
+  favOrNot(){
+    this.isFavourite = !this.isFavourite;
   }
+  
 }

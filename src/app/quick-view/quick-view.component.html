@@ -1,5 +1,5 @@
 <section id="quick-view">
-    <div class="container-fluid container">
+    <div class="container-fluid">
       <div class="backbtn">
         <button type="button" id="close" class="close" data-dismiss="modal" (click)="onClose()">
           <i class="fa-solid fa-arrow-left-long"></i>
@@ -20,9 +20,18 @@
           </div>
           <hr>
 <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto nobis totam beatae necessitatibus vero consequatur at eaque odit ipsum? Ad veniam voluptatum a maiores dolor id, culpa nihil dignissimos laboriosam eaque harum, nesciunt quia quibusdam. -->
+
           <div class="prod-desc">
             <p>{{product.description}}</p>
           </div>
+          <div class="rating">
+            <ng-rating-bar
+          [value]="average"
+          [ratingCount]="5"
+          [disabled]="true"
+          ></ng-rating-bar>
+          </div>
+          
           <div class="prod-quantity">
             <input class="form-control" id="quantityId" type="number" #selectedQuantity value="1" required min="1" >
           </div>
@@ -30,9 +39,9 @@
             <p>{{ product.price | currency : "Rs." }}</p>
           </div>
          
+  
          
           <div class="buttons">
-            <!-- <button class="btn btn-default" (click)="onBack()">Back</button> -->
             <button class="btn btn-default" (click)="onAddToCart()">Add to Cart</button>
             <a routerLinkActive="active" class="cart-link" routerLink="/cart/cartProducts">
               <button class="btn btn-default" *ngIf="authenticationService.loggedIn()">View Cart</button>
@@ -49,4 +58,8 @@
         <p>Please check your Internet connection</p>
       </ng-template>
     </div>
+  </section>
+  <section id="ratesReviews">
+    <app-rate-list></app-rate-list>
+
   </section>

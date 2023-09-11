@@ -37,6 +37,7 @@ export class SignupComponent implements OnInit {
   onSignUp() {
     console.log(this.signupForm);
     this.authentication.onSignUpService(this.signupForm).subscribe(data => {
+      console.log(data);
       this.tokenStorage.saveToken(data.token);
       this.tokenStorage.saveUser(data);
       this.router.navigate(["/home"]);

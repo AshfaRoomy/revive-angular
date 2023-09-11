@@ -14,7 +14,7 @@ export class CartListComponent {
   count=0;
   // total;
   constructor(private cartService: CartService, private router: Router) {
-    this.emptycartimg = 'assets/images/emptycart.png';
+    this.emptycartimg = 'assets/images/emptycart2.png';
   }
 
   ngOnInit() {

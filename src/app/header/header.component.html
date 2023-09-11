@@ -13,9 +13,7 @@
                     <a routerLink="/signup" id="signupLink" *ngIf="!authenticationService.loggedIn()">Sign In&nbsp; |
                         &nbsp;</a>
                     <a routerLink="/login" id="loginLink" *ngIf="!authenticationService.loggedIn()">Login</a>
-                    <a routerLink="/home" id="loginLink" *ngIf="authenticationService.loggedIn()"
-                        (click)="onLogout()">Logout</a>
-
+                   
                 </p>
             </div>
             <div class="cart">
@@ -23,9 +21,18 @@
                 <a class="cart-link" routerLink="/cart/cartProducts">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
-                <a class="orders-link" routerLink="/orders" *ngIf="authenticationService.loggedIn() &&  !authenticationService.isAuthenticated()">
-                    Orders
-                </a>
+            
+                <div class="dropdown" *ngIf="authenticationService.loggedIn()">
+                    <button class="dropdown-icon" (click)="toggleDropdown()">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                    <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+                      <li><a href="#">My Profile</a></li>
+                      <li><a class="orders-link" routerLink="/orders" *ngIf="authenticationService.loggedIn() &&  !authenticationService.isAuthenticated()">My Orders</a></li>
+                      <li><a routerLink="/home" id="loginLink" *ngIf="authenticationService.loggedIn()"
+                        (click)="onLogout()">Logout</a></li>
+                    </ul>
+                  </div>
             </div>
         </div>
 

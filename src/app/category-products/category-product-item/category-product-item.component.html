@@ -15,13 +15,17 @@
     </div>
     <p class="name">{{ productElement.productName }} </p>
     <p class="brand">{{ productElement.brand}}</p>
-    <p class="price">{{ productElement.price | currency : "Rs." }}</p> 
-    <!-- <p>loose</p>
-    <ng-rating-bar 
+    <div class="star">
+        <ng-rating-bar class="rating"
     [(value)]="average" 
     [ratingCount]="5" 
     [disabled] = true
-  ></ng-rating-bar>   -->
+  ></ng-rating-bar> 
+    </div>
+     
+    <p class="price">{{ productElement.price | currency : "Rs." }}</p> 
+ 
+
    <!-- <button class="viewratesreview"> View Rates & Review</button> -->
 
 

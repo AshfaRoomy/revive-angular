@@ -24,7 +24,7 @@ export class CategoryProductListComponent {
       (params: Params) => {
         this.category = params['category'];
         this.productService.onGetAllProductByCategoryName(this.category).subscribe(data => {
-          console.log(this.category)
+          console.log("see hererokay: ", data)
           this.catproductList = data
         })
 

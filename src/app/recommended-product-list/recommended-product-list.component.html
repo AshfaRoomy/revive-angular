@@ -1,0 +1,18 @@
+<section id="recommended-prod-list">
+    <div class="prod-container">
+        <app-category-product-item class="productElement" *ngFor="let product of recmndproductList.slice(0,3)"
+            [productElement]="product"></app-category-product-item>
+    </div>
+
+    <!-- <swiper-container>
+    
+        <swiper-slide>  
+            <app-category-product-item  class="productElement" *ngFor="let product of recmndproductList.slice(0, 4)" [productElement]="product"></app-category-product-item >
+            </swiper-slide>   
+        
+        <swiper-slide>  
+            <app-category-product-item  class="productElement" *ngFor="let product of recmndproductList(3, 7)" [productElement]="product"></app-category-product-item >
+        </swiper-slide> ...
+      </swiper-container> -->
+    
+</section>

@@ -58,6 +58,7 @@ import { CustomerOrderItemComponent } from './customer-order-item/customer-order
 import { CustomerOrderItemListComponent } from './customer-order-item-list/customer-order-item-list.component';
 import { CustomerOrderDetailsItemComponent } from './customer-order-details-item/customer-order-details-item.component';
 // import function to register Swiper custom elements
+
 import { register } from 'swiper/element/bundle';
 import { RateReviewFormComponent } from './rate-review-form/rate-review-form.component';
 import { RateReviewService } from './services/RateReviewService.service';
@@ -67,6 +68,7 @@ import { NgRatingBarModule } from 'ng-rating-bar';
 import { ProductRateReviewDetailComponent } from './product-rate-review-detail/product-rate-review-detail.component';
 import { RateListComponent } from './rate-list/rate-list.component';
 import { RateItemComponent } from './rate-item/rate-item.component';
+import { RecommendedProductListComponent } from './recommended-product-list/recommended-product-list.component';
 
 // register Swiper custom elements
 register();
@@ -116,6 +118,7 @@ register();
     ProductRateReviewDetailComponent,
     RateListComponent,
     RateItemComponent,
+    RecommendedProductListComponent,
   ],
   imports: [
     BrowserModule,

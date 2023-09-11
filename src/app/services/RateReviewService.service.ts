@@ -23,11 +23,11 @@ export class RateReviewService {
     constructor(private http: HttpClient,
         private tokenStorage: TokenStorage) {
     }
-    onAddRateReview(productId, rateFrom): Observable<any> {
+    onAddRateReview(productId, rateForm): Observable<any> {
         const localHttpOptions = getHttpOptions(this.tokenStorage.getToken()as String);
         return this.http.post(API + "product-rate/" + productId, {
-            rate: rateFrom.value.rate,
-            feedback: rateFrom.value.feedback
+            rate: rateForm.value.rate,
+            feedback: rateForm.value.feedback
         }, localHttpOptions)
     }
     onGetRateReviewByProductId(id): Observable<any> {

@@ -1,23 +1,24 @@
 <div class="card clearfix">
     <div class="card-body">
+        <!-- <div class="container" style="display: flex;justify-content: flex-end;">
+            <span style="position: absolute;" id="notFavourite" (click)="favOrNot()" *ngIf="isFavourite==false"><i class=" heart fa fa-heart-o"></i></span>
+            <span style="position: absolute;" id="favourite" (click)="favOrNot()" *ngIf="isFavourite==true"><i class="heart fa fa-heart"></i></span>
+        </div> -->
         <div class="nameDateContainer">
-            <!-- <p> {{rateReviewElement.user.email}}</p>
-            <p>{{rateReviewElement.date}}</p> -->
+            <p class="date">{{rateReviewElement.date}}</p>
+            <p class="email"> {{rateReviewElement.user.email}}</p>
         </div>
         <div class="ratingStarContainer">
-            <!-- <bar-rating [(rate)]="rateReviewElement.rate" [readOnly]="true" [max]="5" style="margin-top: -30px;"></bar-rating> -->
-            <!-- <ng-rating-bar 
+            <ng-rating-bar 
             [(value)]="rateReviewElement.rate" 
             [ratingCount]="5" 
             [disabled] = true
-          ></ng-rating-bar>   -->
-            <!-- <a type="button" (click)="this.openModal(rateReviewElement.rateReviewId)" style="margin-top: -8px;">View Rate</a> -->
+          ></ng-rating-bar>  
         </div>
         <div class="feedBackContainer">
-            <!-- <p id="reviews">{{rateReviewElement.feedback}}</p> -->
-            <!-- <app-child></app-child> -->
+            <p id="reviews">{{rateReviewElement.feedback}}</p>
 
         </div>
     </div>
-
+<hr>
 </div>

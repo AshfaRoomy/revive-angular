@@ -32,16 +32,14 @@ export class RateReviewFormComponent implements OnInit {
     get rateControl(): FormControl<number | null> {
       return this.rateReviewForm.get('rate') as FormControl<number | null>;
     }
-    set rateControl(newvalue) {
-      this.rateReviewForm.get('rate')?.setValue(newvalue);
-    }
+
     onSubmitRate()
     {
-        console.log("statemenr: ",this.rateReviewForm);
+
         this.rateReviewService.onAddRateReview(this.productId, this.rateReviewForm).subscribe(data=>
           {
             this.toastr.success(data.message);
-            // this.rateReviewForm.get('rate')?.setValue(0);
+
             this.rateReviewForm.reset();
             
             // console.log("teh subscribe data: ",       this.rateReviewForm.get('rate')?.setValue(0));

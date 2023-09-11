@@ -6,6 +6,7 @@ import { Product } from '../models/Product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../services/CartService.service';
+import { SwiperModule } from 'swiper/types/shared';
 
 @Component({
   selector: 'app-home',

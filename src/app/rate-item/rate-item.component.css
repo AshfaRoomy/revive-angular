@@ -1,0 +1,19 @@
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "DM Sans", serif;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(49, 49, 49, 0.2);
+
+}
+.date{
+    font-size: 12px;
+}
+.email{
+    font-size: 14px;
+    font-weight: 600;
+}

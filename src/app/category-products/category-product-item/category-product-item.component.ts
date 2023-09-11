@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/CartService.service';
 import { WishlistService } from 'src/app/services/WishlistService.service';
+import { RateReviewService } from 'src/app/services/RateReviewService.service';
 
 @Component({
   selector: 'app-category-product-item',
@@ -22,10 +23,15 @@ export class CategoryProductItemComponent {
     private wishlistService: WishlistService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private rateService:RateReviewService
   ) { }
 
   ngOnInit() {
+    
+this.rateService.onGetRateReviewByProductId(this.productElement.productId).subscribe(data=>{
+  this.average = this.rateService.onCalculateAverage(data); 
+ });
     if (this.authenticationService.loggedIn()) {
       this.wishlistService.getAWishlistProductService(this.productElement.productId).subscribe((data) => {
         this.wishlistProduct = data;

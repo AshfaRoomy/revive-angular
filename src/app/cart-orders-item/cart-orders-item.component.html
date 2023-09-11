@@ -1,22 +1,23 @@
 <p><div style="cursor: pointer; width: 470px;" class="card clearfix">
     <div class="card-body">
-        <div class="id">
+        <!-- <div class="id">
             <p>Cart Item</p><h1>#{{cartOrderElement.cartOrderId}}</h1>
-          </div>
-        <div class="containerImage">
-            <img [attr.src]="cartOrderElement?.cart.product.image" class="imgContainer">
+          </div> -->
+        <div class="container-sm">
+            <div class="containerImage">
+                <img [attr.src]="cartOrderElement?.cart.product.image" class="imgContainer">
+            </div>
+            
+                
+                <div class="container">
+    
+                    <p class="card-name">{{cartOrderElement.cart.product.productName}}</p>
+                    <p class="card-qty">x{{cartOrderElement.cart.cartQuantity}}</p>
+                    <p class="card-price">Rs.{{cartOrderElement.cart.totalPrice}}.00 </p> 
+    
+                </div>
         </div>
         
-        
-            <div class="container">
-
-                <!-- <a type="button" data-toggle="modal" data-target="#rate" *ngIf="cartOrderElement.orders.status==='Completed'"><u>Rate Me</u></a> -->
-                <!-- <p class="card-text"> {{cartOrderElement.orders.user.username}}</p> -->
-                <p class="card-text">Quantity: {{cartOrderElement.cart.cartQuantity}}</p>
-                <p class="card-text">Rs.{{cartOrderElement.cart.totalPrice}}.00 </p> 
-
-                <!-- <p class="card-text">Rs.{{cartOrderElement.orders.total}}.00 </p>  -->
-            </div>
 
            
 
@@ -24,10 +25,10 @@
                 <p class="card-text">Rs.{{cartOrderElement.orders.total}}.00 </p> 
             </div> -->
             <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#rateReviewForm" id="rateReviewForm">Rate Products</button> -->
-            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#rate"><u>Rate Me</u></button>
-            <p>{{cartOrderElement.cart.product.productId}}</p>    
+            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#rate">Rate Me</button>
             <app-rate-review-form [productId]="cartOrderElement.cart.product.productId"></app-rate-review-form>
             <!-- <app-rate-review-form class="modal fade" id="rateReviewForm" tabindex="-1" role="dialog"></app-rate-review-form> -->
         
     </div>
+    <hr>
 </div>

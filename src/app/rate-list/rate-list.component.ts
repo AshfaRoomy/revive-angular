@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RateReviewService } from '../services/RateReviewService.service';
 import { ProductService } from '../services/ProductService.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'app-rate-list',
@@ -21,10 +22,7 @@ export class RateListComponent {
         (params: Params) => {
           this.id = +params['id'];
           console.log(this.id)
-          this.productService.onGetProductById(this.id).subscribe(data=>
-            {
-              this.scaledImage= data.scaledImage;
-            })
+        
           this.rateReviewService.onGetRateReviewByProductId(this.id).subscribe(data => {
             this.rateReviewList = data;
             console.log("Rate review list:", data);
@@ -35,11 +33,11 @@ export class RateListComponent {
           });
         }
       );
+      
+      
     
     }
   
-    onViewDetails(index){
-      this.router.navigate(['products/details/'+index]);
-    }
-  
+   
+    
 }

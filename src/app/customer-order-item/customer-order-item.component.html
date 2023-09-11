@@ -1,37 +1,28 @@
-<!-- <div class="container_main">
-    <div class="card card-flip h-100">
-        <div class="card-body">
-            <div class="container">
-                <h6>Order Id {{custOrderElement.orders.ordersId}}</h6>
-                <span style="cursor: pointer;" id="info" type="button" (click)="onOrderDetail(custOrderElement.ordersId)"><i class="fa fa-info"></i></span>
+<section id="cart-order">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="div1">
+                <div class="col-md-4 id align-items-center d-flex">
+                    <p>Order Id</p>
+                    <h1>{{custOrderElement.ordersId}}</h1>
+                </div>
             </div>
-            <div class="dateContainer">
-                <p>Date</p>
-                <p>{{custOrderElement.orders.date}}</p>
+           
+            <div class="col-md-7 container">
+                <p class="card-date">{{custOrderElement.date}}</p>
+               
+                <h3 class="card-title">Username: {{custOrderElement.user.username}}</h3>
+                <p class="card-text">Address: {{custOrderElement.address}}</p>
             </div>
-            <div class="priceContainer">
-                <p>Total Price: </p>
-                <p>{{custOrderElement.orders.total}}</p>
+            <div class="col-md-1 d-flex justify-content-center view">
+                <span style="cursor: pointer;" id="info" type="button" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="!authenticationService.isAuthenticated()"><i class="fa fa-info"></i></span>
+                <button class="view-order" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="authenticationService.isAuthenticated()">View Order</button>
             </div>
-            <p style="margin: 3%;">Address: {{custOrderElement.orders.address}}</p>
+           
+
 
         </div>
-    </div>
-</div> -->
-<section id="cart-orders">
-    <div class="cart-order-body">
-        <div class="id">
-            <p>Order Id:</p>
-            <h1>{{custOrderElement.ordersId}}</h1>
-        </div>
-        <div class="container">
-            <p class="card-date">{{custOrderElement.date}}</p>
-
-            <h3 class="card-title">Username: {{custOrderElement.user.username}}</h3>
-            <p class="card-text">Address: {{custOrderElement.address}}</p>
-        </div>
-        <span style="cursor: pointer;" id="info" type="button" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="!authenticationService.isAuthenticated()"><i class="fa fa-info"></i></span>
-        <button class="view-order" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="authenticationService.isAuthenticated()">View Order</button>
+        
        
     </div>
 </section>

@@ -1,30 +1,25 @@
 <div class="container-sm">
-    <div class="row">
-        <div class="col-md-4">
+    <div class="row" *ngIf="count!==0">
+        <div class="col-md-5">
+            <h3>Product Reviews</h3>
             <div class="container_main container-sm">
                 <div class="card text-center">
-                    <div class="card-body">
-                        <div class="container" style="display: flex;justify-content: flex-end;">
-                            <!-- <span style="position: absolute;" id="notFavourite" *ngIf="isFavourite==false"><i class=" heart fa fa-heart-o"></i></span>
-                            <span style="position: absolute;" id="favourite" *ngIf="isFavourite==true"><i class="heart fa fa-heart"></i></span> -->
-                        </div><img [attr.src]="scaledImage" class="imageView">
-
-                        <section>
-                            <ng-rating-bar 
-                            [(value)]="average" 
-                            [ratingCount]="5" 
-                            [disabled] = true
-                          ></ng-rating-bar>  
-                        </section>
-                        <a type="button" (click)="onViewDetails(id)">View Details</a>
-                    </div>
+                    <app-rate-item class="rateItem" *ngFor="let item of rateReviewList" [rateReviewElement]="item" [index]="item.rateId"></app-rate-item>
+                    <!-- <img *ngIf="count==0" src="https://cdn0.iconfinder.com/data/icons/star-emoji-8/64/emoji-emotion-star-crying-sad-disappointed-512.png" style="margin-left: 33%; max-width: 33%;" class="img-fluid"> -->
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <app-rate-item class="rateItem" *ngFor="let item of rateReviewList" [rateReviewElement]="item" [index]="item.rateId"></app-rate-item>
-            <img *ngIf="count==0" src="https://cdn0.iconfinder.com/data/icons/star-emoji-8/64/emoji-emotion-star-crying-sad-disappointed-512.png" style="margin-left: 33%; max-width: 33%;" class="img-fluid">
+        <div class="col-md-7 recommended">
+           <h3>Recommended for you</h3>
+           <app-recommended-product-list></app-recommended-product-list>
+           <!-- <app-product-list></app-product-list> -->
+           <!-- <app-category-product-list></app-category-product-list> -->
         </div>
+
+    </div>
+    <div class="card2" *ngIf="count==0">
+        <h1>Recommended products</h1>
+        <app-recommended-product-list></app-recommended-product-list>
 
     </div>
 </div>
