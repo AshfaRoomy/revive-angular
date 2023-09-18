@@ -13,6 +13,8 @@ export class RateReviewFormComponent implements OnInit {
   @Input() productId;
   rateReviewForm:FormGroup;
   rate: number=0;
+  // stars = [1, 2, 3, 4, 5];
+  // rating = 0;
   @ViewChild('ratingBar') ratingBar: any; // Reference to the ng-rating-bar element
 
     constructor(private toastr:ToastrService, private rateReviewService:RateReviewService, private fb: FormBuilder) {
@@ -33,13 +35,23 @@ export class RateReviewFormComponent implements OnInit {
       return this.rateReviewForm.get('rate') as FormControl<number | null>;
     }
 
+  //   initForm(){
+  //     this.rateReviewForm = new FormGroup({
+  //       'rate': new FormControl(null, Validators.required),
+  //       'feedback': new FormControl(null,Validators.required)
+  //     });
+  // }
+
+  // updateRating(r: any){
+  //   this.rating = r;
+  // }
     onSubmitRate()
     {
 
         this.rateReviewService.onAddRateReview(this.productId, this.rateReviewForm).subscribe(data=>
           {
             this.toastr.success(data.message);
-
+            console.log("Rate Form:", this.rateReviewForm);
             this.rateReviewForm.reset();
             
             // console.log("teh subscribe data: ",       this.rateReviewForm.get('rate')?.setValue(0));

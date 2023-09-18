@@ -303,3 +303,34 @@ swiper-slide{
     color: red;
     text-shadow: 1px 1px 1px;
 } */
+.slider-container {
+    width: 300px; /* Adjust the width as needed */
+    /* overflow: hidden; */
+    position: relative;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  swiper-slide img{
+    width: auto;
+    height: 400px;
+
+  }
+  #poster{
+    box-shadow: 0 5px 15px rgba(49, 49, 49, 0.2);
+    margin: 40px 0;
+  }

@@ -68,18 +68,24 @@
         </div>
     </div>
 </section>
-<swiper-container>
+
+ 
+  <section id="poster">
     
-    <swiper-slide>  
-        <app-category-product-item  class="productElement" *ngFor="let product of cosmeticProductList.slice(0, 4)" [productElement]="product"></app-category-product-item >
+    <swiper-container>
+    
+        <swiper-slide>  
+            <img [src]="poster1" alt="">
         </swiper-slide>   
-    
-    <swiper-slide>  
-        <app-category-product-item  class="productElement" *ngFor="let product of cosmeticProductList.slice(3, 7)" [productElement]="product"></app-category-product-item >
-    </swiper-slide> ...
-  </swiper-container>
-  <!-- <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div> -->
+         <swiper-slide>
+            <img [src]="poster2" alt="">  
+        </swiper-slide>
+        <swiper-slide>
+            <img [src]="poster3" alt="">  
+        </swiper-slide> ...
+      </swiper-container>
+  </section>
+  
   
 
 <section id="banner" [ngStyle]="{ background: 'url(assets/images/banner1.png)' }">
@@ -98,5 +104,23 @@
     </div>
 
 </section>
-
+<section id="product-sliders">
+    <div class="cosmetic-slider">
+        <div class="slider-container">
+            <div class="slider" [style.transform]="'translateX(' + slidePosition + 'px)'">
+              <!-- Your slides go here -->
+              <app-category-product-item  class="productElement slide" *ngFor="let product of cosmeticProductList" [productElement]="product"></app-category-product-item >
+                <!-- <app-category-product-item  class="productElement slide" *ngFor="let product of cosmeticProductList.slice(3, 7)" [productElement]="product"></app-category-product-item > -->
+        
+            </div>
+            
+            
+          </div>
+          <div class="buttons">
+            <button class="btn btn-default" (click)="prevSlide()">&lt;</button>
+        <button class="btn btn-default" (click)="nextSlide()">&gt;</button>
+        </div>
+      </div>
+</section>
+<!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente a soluta iure asperiores officia, quo unde ullam dolorum fuga! Velit, rerum. Aspernatur expedita sequi assumenda est nisi, incidunt quibusdam repudiandae sit laborum, molestias adipisci porro magni quo explicabo, error aliquam pariatur ab labore quis eaque molestiae ducimus. Voluptatem, fugit adipisci. -->
 

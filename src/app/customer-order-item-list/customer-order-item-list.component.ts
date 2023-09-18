@@ -9,7 +9,7 @@ import { OrderService } from '../services/OrderServices.service';
 export class CustomerOrderItemListComponent {
   orderList;
   
-  count;
+  count = 0;
   constructor(private orderService: OrderService) { 
 
   }
@@ -19,7 +19,7 @@ export class CustomerOrderItemListComponent {
     this.orderService.onGetAllOrderByUser().subscribe(data => {
       console.log("ordersList: ",data);
       this.orderList = data;
-      // this.count = this.cartOrdersList.length;
+      this.count = this.orderList.length;
     });
     // this.orderService.updateOrderList.subscribe(() => {
     //   this.orderService.onGetAllCartOrdersByUserId().subscribe(data => {

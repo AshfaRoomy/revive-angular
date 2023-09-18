@@ -18,30 +18,16 @@
             
             
         </div>
-        <div class="container">
-            <!-- <app-add-blog-dialog class="modal fade" id="addBlog" tabindex="-1" role="dialog"></app-add-blog-dialog> -->
-           
-            
-        </div>
+       
     </div>
     <div class="row">
         <div class="col-md-6 view-orders">
             <router-outlet></router-outlet>
-        </div>
-        <div class="col-md-6">
-            <div class="containersm">
-                <div class="row">
-                    <div class="col-md-7">
-                       
-                        <div class="item_list_div">
-                            <img *ngIf="count==0" src="https://cdn.dribbble.com/users/429792/screenshots/3649946/no_order.png" class="img-fluid">
-                            <app-customer-order-item class="orderItem" *ngFor="let x of orderList" [custOrderElement]="x"></app-customer-order-item>
-                        </div>
-                    </div>
-                    
-                </div>
-            
-            </div>        
-        </div>
+        </div>                       
+            <div class="item_list_div col-md-6">
+                <img *ngIf="count==0" src="https://cdn.dribbble.com/users/429792/screenshots/3649946/no_order.png" class="img-fluid">
+                <app-customer-order-item class="orderItem" *ngFor="let x of orderList" [custOrderElement]="x"></app-customer-order-item>
+            </div>
+
     </div>
 </div>

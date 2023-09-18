@@ -1,12 +1,12 @@
 <div class="containersm">
-    <h1>My Orders</h1>
-
+    <h1 *ngIf="count!==0">My Orders</h1>
+    <div class="headerContainer">
+        <img *ngIf="count==0" src="https://cdn.dribbble.com/users/429792/screenshots/3649946/no_order.png" class="img-fluid">
+    </div>
     <div class="row">
         <div class="col-md-7">
-            <div class="headerContainer">
-            </div>
+            
             <div class="item_list_div">
-                <img *ngIf="count==0" src="https://cdn.dribbble.com/users/429792/screenshots/3649946/no_order.png" class="img-fluid">
                 <app-customer-order-item class="orderItem" *ngFor="let x of orderList" [custOrderElement]="x"></app-customer-order-item>
             </div>
         </div>

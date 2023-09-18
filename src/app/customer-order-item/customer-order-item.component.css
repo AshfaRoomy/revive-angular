@@ -43,3 +43,21 @@
 .view i:hover{
     color: #000;
 }
+.view {
+    display: flex;
+    align-items: center;
+}
+.view button{
+    border: 2px solid #67807A;
+    color: #67807A;
+    font-weight: 600;
+    background-color: transparent;
+    padding: 5px;
+}
+.view button:hover{
+    background-color:#67807A ;
+    color: #fff;
+}
+.btn-default:focus{
+    outline: none;
+}

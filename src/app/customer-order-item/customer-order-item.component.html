@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-1 d-flex justify-content-center view">
                 <span style="cursor: pointer;" id="info" type="button" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="!authenticationService.isAuthenticated()"><i class="fa fa-info"></i></span>
-                <button class="view-order" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="authenticationService.isAuthenticated()">View Order</button>
+                <button class="btn btn-default view-order" (click)="onOrderDetail(custOrderElement.ordersId)" *ngIf="authenticationService.isAuthenticated()">View Order</button>
             </div>
            
 

@@ -24,9 +24,10 @@
 
         </div>
         <div class="btncheckout">
+               
+                <button class="btn btn-primary" routerLink="/home">Back to Shopping</button>
                 <button *ngIf="count!==0" class="btn btn-primary" data-toggle="modal" data-target="#payment"
                 id="paymentButton"><i class="fa fa-money" aria-hidden="true"></i>&nbsp; Checkout</button>
-                <button class="btn btn-primary" routerLink="/home">Back to Shopping</button>
                 <button *ngIf="count==0" class="btn btn-primary" routerLink="/orders" >Check Your orders</button>
         </div>
     </div>

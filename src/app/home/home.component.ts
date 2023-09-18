@@ -6,7 +6,6 @@ import { Product } from '../models/Product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../services/CartService.service';
-import { SwiperModule } from 'swiper/types/shared';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +18,10 @@ export class HomeComponent implements OnInit {
   feature3: String;
   feature4: String;
   feature5: String;
+  poster1: String;
+  poster2: String;
+  poster3: String;
+
   @Input() productElement: Product;
   cosmeticProductList;
   skinCareProductList;
@@ -26,6 +29,9 @@ export class HomeComponent implements OnInit {
 
   isFavourite: boolean;
   wishlistProduct: any;
+  slidePosition = 0;
+
+  
 
   constructor(private productService: ProductService, private authenticationService: AuthenticationService, private wishlistService: WishlistService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, private router: Router, private cartService: CartService) {
     this.feature1 = 'assets/images/features/f1.png';
@@ -33,7 +39,10 @@ export class HomeComponent implements OnInit {
     this.feature3 = 'assets/images/features/f3.png';
     this.feature4 = 'assets/images/features/f4.png';
     this.feature5 = 'assets/images/features/f5.png';
-  
+    this.poster1 = 'assets/images/post1.png';
+    this.poster2 = 'assets/images/post2.png';
+    this.poster3 = 'assets/images/post3.png';
+
 
   }
 
@@ -52,6 +61,8 @@ export class HomeComponent implements OnInit {
       this.skinCareProductList = data;
       console.log(data);
     });
+
+   
     if (this.authenticationService.loggedIn()) {
       this.wishlistService.getAWishlistProductService(this.productElement.productId).subscribe((data) => {
         this.wishlistProduct = data;
@@ -66,6 +77,19 @@ export class HomeComponent implements OnInit {
       });
     }
 
+  }
+
+  prevSlide() {
+    if (this.slidePosition < 0) {
+      this.slidePosition += 300; // Adjust based on your slide width
+    }
+  }
+
+  nextSlide() {
+    const maxPosition = -(this.cosmeticProductList.length - 1) * 300; // Adjust based on your slide width and number of slides
+    if (this.slidePosition > maxPosition) {
+      this.slidePosition -= 300; // Adjust based on your slide width
+    }
   }
 
   quickView(productId) {

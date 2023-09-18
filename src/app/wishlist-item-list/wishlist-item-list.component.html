@@ -1,12 +1,22 @@
 
 <div class="main-container">
-    <div class="container">
+    <div class="container-fluid">
+        <div class="empty-img" *ngIf="count==0">
+            <img [src]="emptywishlist" class="img-fluid">
+        </div>
+        <div class="item_list_div" *ngIf="count!==0">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>My Wishlist</h1>
+                    <app-wishlist-item class="wishlistItem" *ngFor="let item of wishlist" [wishlist]="item"></app-wishlist-item>
+                </div>
+                <!-- <div class="col-md-6">
+                    <h1>Recommended for you</h1>
+                    <app-recommended-product-list></app-recommended-product-list>
+                </div> -->
 
-        <div class="item_list_div">
-            <div class="empty-img" *ngIf="count==0">
-                <img [src]="emptywishlist" class="img-fluid">
             </div>
-            <app-wishlist-item class="wishlistItem" *ngFor="let item of wishlist" [wishlist]="item"></app-wishlist-item>
+            
         </div>
 
     </div>

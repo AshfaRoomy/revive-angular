@@ -1,0 +1,17 @@
+.main-container{
+    padding: 30px;
+}
+.container-fluid{
+    width: 100%;
+    min-height: 65vh;
+}
+.empty-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+h1{
+    font-family: "Syne";
+}

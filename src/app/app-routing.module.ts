@@ -25,6 +25,7 @@ import { CustomerOrderItemListComponent } from './customer-order-item-list/custo
 import { CustomerOrderItemComponent } from './customer-order-item/customer-order-item.component';
 import { CustomerOrderDetailsItemComponent } from './customer-order-details-item/customer-order-details-item.component';
 import { ProductRateReviewDetailComponent } from './product-rate-review-detail/product-rate-review-detail.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'product', component: ProductComponent },
   { path: 'product-list', component: ProductListComponent },
   { path: 'blogs-page', component: BlogsPageComponent,children: [

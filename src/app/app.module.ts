@@ -69,6 +69,7 @@ import { ProductRateReviewDetailComponent } from './product-rate-review-detail/p
 import { RateListComponent } from './rate-list/rate-list.component';
 import { RateItemComponent } from './rate-item/rate-item.component';
 import { RecommendedProductListComponent } from './recommended-product-list/recommended-product-list.component';
+import { AboutComponent } from './about/about.component';
 
 // register Swiper custom elements
 register();
@@ -119,6 +120,7 @@ register();
     RateListComponent,
     RateItemComponent,
     RecommendedProductListComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
