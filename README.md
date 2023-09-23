@@ -3,7 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 run the command : npm install.
-this command will install the nodemodules which will contain all ther packages requried used in this project
+
+This command will install the nodemodules which will contain all ther packages requried used in this project
 
 ## Development server
 
